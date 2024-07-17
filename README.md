@@ -61,8 +61,6 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 7. As an administrator, I want to view all courses a student is enrolled in so that I can manage their academic progress.
 8. As an administrator, I want to update a student's GPA so that their academic performance is accurately reflected.
 
-## Contributing
-Please read `CONTRIBUTING.md` for details on the code of conduct and the process for submitting pull requests.
 
 ## Authors
 - Justin Harris   -  Student Developer
