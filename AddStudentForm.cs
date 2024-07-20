@@ -31,7 +31,7 @@ namespace TinyCollegeGUI
 
         private void AddStudentForm_Load(object sender, EventArgs e)
         {
-            // Perform any necessary initialization here
+            
         }
     }
 }

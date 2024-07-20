@@ -16,7 +16,7 @@ namespace TinyCollegeGUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +35,11 @@ namespace TinyCollegeGUI
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
