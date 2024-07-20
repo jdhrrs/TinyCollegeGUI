@@ -1,16 +1,24 @@
-﻿namespace TinyCollegeGUI
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace TinyCollegeGUI
 {
     partial class MainForm
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private TextBox textBox1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel toolStripStatusLabel;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,12 +28,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
@@ -37,6 +39,9 @@
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
+            statusStrip = new StatusStrip();
+            toolStripStatusLabel = new ToolStripStatusLabel();
+            statusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -54,9 +59,9 @@
             // 
             button1.BackColor = SystemColors.ActiveCaption;
             button1.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(121, 119);
+            button1.Location = new Point(121, 97);
             button1.Name = "button1";
-            button1.Size = new Size(239, 55);
+            button1.Size = new Size(239, 77);
             button1.TabIndex = 1;
             button1.Text = "Add a Student";
             button1.UseVisualStyleBackColor = false;
@@ -99,9 +104,9 @@
             // 
             button5.BackColor = SystemColors.ActiveCaption;
             button5.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(508, 119);
+            button5.Location = new Point(508, 97);
             button5.Name = "button5";
-            button5.Size = new Size(211, 55);
+            button5.Size = new Size(211, 77);
             button5.TabIndex = 5;
             button5.Text = "Add a Course";
             button5.UseVisualStyleBackColor = false;
@@ -138,12 +143,29 @@
             button8.TabIndex = 8;
             button8.Text = "Exit";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // statusStrip
+            // 
+            statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
+            statusStrip.Location = new Point(0, 477);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(884, 22);
+            statusStrip.TabIndex = 9;
+            statusStrip.Text = "statusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            toolStripStatusLabel.Name = "toolStripStatusLabel";
+            toolStripStatusLabel.Size = new Size(0, 17);
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Navy;
+            ClientSize = new Size(884, 499);
+            Controls.Add(statusStrip);
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
@@ -153,22 +175,16 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox1);
+            Cursor = Cursors.AppStarting;
             Name = "MainForm";
-            Text = "Main Form";
+            Text = "Welcome";
             Load += MainForm_Load;
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
     }
 }
+
+
