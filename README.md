@@ -22,7 +22,7 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/tiny-college-management-system.git
+    git clone https://github.com/your-username/tiny-college-GUI.git
     ```
 2. Open the solution file (`TinyCollege.sln`) in Visual Studio or your preferred IDE.
 
