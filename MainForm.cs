@@ -40,6 +40,7 @@ namespace TinyCollegeGUI
             this.Close();
         }
 
+        // Add a course button
         private void button5_Click(object sender, EventArgs e)
         {
 
