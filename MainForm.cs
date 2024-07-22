@@ -19,6 +19,7 @@ namespace TinyCollegeGUI
 
         }
 
+        // AddStudentButton 
         private void button1_Click(object sender, EventArgs e)
         {
             AddStudentForm addStudentForm = new AddStudentForm();
@@ -32,6 +33,7 @@ namespace TinyCollegeGUI
             toolStripStatusLabel.Text = $"Student {newStudent.FirstName} {newStudent.LastName} added successfully!";
         }
 
+        // CLose Button 
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,6 +60,8 @@ namespace TinyCollegeGUI
             GPA = gpa;
         }
 
+
+        // ToString Method 
         public override string ToString()
         {
             return $"{FirstName} {LastName} (ID: {StudentId}) - GPA: {GPA}";
