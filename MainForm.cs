@@ -27,6 +27,7 @@ namespace TinyCollegeGUI
             addStudentForm.ShowDialog();
         }
 
+        // This will show that the student was added sucessfully. 
         private void AddStudentForm_StudentAdded(Student newStudent)
         {
             students.Add(newStudent);
