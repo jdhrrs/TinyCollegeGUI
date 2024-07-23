@@ -1,4 +1,9 @@
-﻿namespace TinyCollegeGUI
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+
+namespace TinyCollegeGUI
 {
     partial class AddStudentForm
     {
