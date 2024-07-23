@@ -6,7 +6,7 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 
 ## Features
 - **Add New Students:** Add new student information to the system.
-- **Display All Students:** View a list of all students in the system.
+- **Display All Students:** View a list of all students in the system. If Admin sees a duplicate, we created a button to remove it. 
 - **Add New Courses:** Add new courses to the system.
 - **Display All Courses:** View a list of all courses offered by the college.
 - **Enroll Student in Course:** Enroll a student in a specific course.
