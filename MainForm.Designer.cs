@@ -149,6 +149,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Modern No. 20", 23.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Ivory;
             label1.Location = new Point(167, 31);
             label1.Name = "label1";
             label1.Size = new Size(533, 34);
