@@ -12,10 +12,12 @@ namespace TinyCollegeGUI
             InitializeComponent();
         }
 
+        // Handle the Add button click event
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            // Generate a new student ID
-            int newStudentId = Database.GetNextStudentId(); // Assuming a method to get the next student ID
+            // Generate a new student ID by calling GetNextStudentId from the main form
+            MainForm mainForm = (MainForm)this.Owner;
+            int newStudentId = mainForm.GetNextStudentId();
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
             double gpa = 0.0; // Default GPA
@@ -31,7 +33,7 @@ namespace TinyCollegeGUI
 
         private void AddStudentForm_Load(object sender, EventArgs e)
         {
-            
+            // Initialization code if needed
         }
     }
 }
