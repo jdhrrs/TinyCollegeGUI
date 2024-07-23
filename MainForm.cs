@@ -150,6 +150,11 @@ namespace TinyCollegeGUI
         {
             buttonDisplayAllStudents_Click(sender, e); // Open DisplayStudentsForm when button2 is clicked
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Student

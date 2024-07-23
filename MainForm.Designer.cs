@@ -3,7 +3,6 @@
     partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
-        private TextBox textBox1;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -26,7 +25,6 @@
 
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -37,19 +35,9 @@
             button8 = new Button();
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
+            label1 = new Label();
             statusStrip.SuspendLayout();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.ActiveCaption;
-            textBox1.Font = new Font("Monotype Corsiva", 26.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(93, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(662, 47);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Tiny College Course Tracking System";
-            textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -73,7 +61,7 @@
             button2.TabIndex = 2;
             button2.Text = "Display All Students";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click; // Ensure this event handler is set
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -157,12 +145,24 @@
             toolStripStatusLabel.Name = "toolStripStatusLabel";
             toolStripStatusLabel.Size = new Size(0, 17);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Modern No. 20", 23.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(211, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(533, 34);
+            label1.TabIndex = 10;
+            label1.Text = "Tiny College Course Tracking System";
+            label1.Click += label1_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(884, 499);
+            Controls.Add(label1);
             Controls.Add(statusStrip);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -172,7 +172,6 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox1);
             Cursor = Cursors.AppStarting;
             Name = "MainForm";
             Text = "Welcome";
@@ -182,6 +181,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Label label1;
     }
 }
 
