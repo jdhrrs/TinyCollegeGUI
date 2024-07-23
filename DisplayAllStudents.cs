@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Text;
 using System.Data.SQLite;
+using System.Linq;
+using System.Windows.Forms;
+
 namespace TinyCollegeGUI
 {
     public partial class DisplayStudentsForm : Form
@@ -56,6 +56,35 @@ namespace TinyCollegeGUI
             var students = GetAllStudents();
             dataGridViewStudents.DataSource = students;
         }
+
+        // Method to remove a student by StudentId
+        private void RemoveStudent(int studentId)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string query = "DELETE FROM Students WHERE StudentId = @id";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", studentId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            LoadStudents(); // Refresh the list after removal
+            MessageBox.Show("Student removed successfully.");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStudents.SelectedRows.Count > 0)
+            {
+                int studentId = (int)dataGridViewStudents.SelectedRows[0].Cells["StudentId"].Value;
+                RemoveStudent(studentId);
+            }
+            else
+            {
+                MessageBox.Show("Please select a student to remove.");
+            }
+        }
     }
 }
-

@@ -1,9 +1,13 @@
-﻿namespace TinyCollegeGUI
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace TinyCollegeGUI
 {
     partial class DisplayStudentsForm
     {
-        private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private DataGridView dataGridViewStudents;
+        private Button button1;
+        private IContainer components = null; // Add this line to fix the missing components error
 
         protected override void Dispose(bool disposing)
         {
@@ -16,8 +20,10 @@
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container(); // Initialize components container
             dataGridViewStudents = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
+            button1 = new Button();
+            ((ISupportInitialize)dataGridViewStudents).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewStudents
@@ -30,13 +36,25 @@
             dataGridViewStudents.Size = new Size(776, 426);
             dataGridViewStudents.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(34, 454);
+            button1.Name = "button1";
+            button1.Size = new Size(166, 65);
+            button1.TabIndex = 1;
+            button1.Text = "Remove Selected Student";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += new System.EventHandler(button1_Click);
+            // 
             // DisplayStudentsForm
             // 
-            ClientSize = new Size(800, 485);
+            ClientSize = new Size(800, 540);
+            Controls.Add(button1);
             Controls.Add(dataGridViewStudents);
             Name = "DisplayStudentsForm";
             Text = "Display Students";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
+            ((ISupportInitialize)dataGridViewStudents).EndInit();
             ResumeLayout(false);
         }
     }
