@@ -22,13 +22,11 @@ namespace TinyCollegeGUI
             LoadStudents(); // Load students from the database when the form loads
         }
 
-        // Establish a connection to the SQLite database
         private SQLiteConnection GetConnection()
         {
             return new SQLiteConnection(connectionString);
         }
 
-        // Create the Students table if it does not exist
         public void CreateTables()
         {
             using (var connection = GetConnection())
@@ -49,7 +47,6 @@ namespace TinyCollegeGUI
             }
         }
 
-        // Add a new student to the Students table
         public void AddStudent(string firstName, string lastName, double gpa)
         {
             using (var connection = GetConnection())
@@ -66,7 +63,6 @@ namespace TinyCollegeGUI
             }
         }
 
-        // Get the next available Student ID from the Students table
         public int GetNextStudentId()
         {
             int nextId = 1; // Default ID
@@ -86,7 +82,6 @@ namespace TinyCollegeGUI
             return nextId;
         }
 
-        // Retrieve all students from the Students table
         public List<Student> GetAllStudents()
         {
             var students = new List<Student>();
@@ -114,14 +109,12 @@ namespace TinyCollegeGUI
             return students;
         }
 
-        // Load students from the database and update the UI
         private void LoadStudents()
         {
             students = GetAllStudents();
             // Update your UI here, e.g., bind students to a ListBox or DataGridView
         }
 
-        // Open the AddStudentForm to add a new student
         private void button1_Click(object sender, EventArgs e)
         {
             AddStudentForm addStudentForm = new AddStudentForm();
@@ -129,7 +122,6 @@ namespace TinyCollegeGUI
             addStudentForm.ShowDialog(this); // Pass the main form as owner
         }
 
-        // Handle the event when a new student is added from the AddStudentForm
         private void AddStudentForm_StudentAdded(Student newStudent)
         {
             AddStudent(newStudent.FirstName, newStudent.LastName, newStudent.GPA); // Save to database
@@ -138,20 +130,28 @@ namespace TinyCollegeGUI
             LoadStudents(); // Refresh UI
         }
 
-        // Close the application
+        private void buttonDisplayAllStudents_Click(object sender, EventArgs e)
+        {
+            DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
+            displayStudentsForm.ShowDialog(this); // Open the new form
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Implement course addition logic here
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Open the form to add a new course
-        private void button5_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            // Implement course addition logic here
+            buttonDisplayAllStudents_Click(sender, e); // Open DisplayStudentsForm when button2 is clicked
         }
     }
 
-    // Student class representing the Student entity
     public class Student
     {
         public int StudentId { get; set; }

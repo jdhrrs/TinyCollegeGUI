@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-
-namespace TinyCollegeGUI
+﻿namespace TinyCollegeGUI
 {
     partial class MainForm
     {
@@ -77,6 +73,7 @@ namespace TinyCollegeGUI
             button2.TabIndex = 2;
             button2.Text = "Display All Students";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click; // Ensure this event handler is set
             // 
             // button3
             // 
@@ -164,7 +161,7 @@ namespace TinyCollegeGUI
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Navy;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(884, 499);
             Controls.Add(statusStrip);
             Controls.Add(button8);
@@ -187,5 +184,4 @@ namespace TinyCollegeGUI
         }
     }
 }
-
 
