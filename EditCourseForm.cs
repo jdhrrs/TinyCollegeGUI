@@ -41,8 +41,8 @@ namespace TinyCollegeGUI
                 MessageBox.Show("Failed to update course information.");
             }
         }
-
-        private bool UpdateCourse(Course course)
+           // SQLite Update usi9ng DB 
+      private bool UpdateCourse(Course course)
         {
             using (var connection = new SQLiteConnection(_connectionString))
             {
