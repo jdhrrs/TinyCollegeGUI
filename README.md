@@ -17,6 +17,7 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 ## Getting Started
 ### Prerequisites
 - Visual Studio or any C# compatible IDE
+- LiteSQL Tool add on through Visual Studios
 - .NET Framework
 
 ### Installation
