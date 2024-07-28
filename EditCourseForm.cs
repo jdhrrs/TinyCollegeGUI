@@ -2,6 +2,8 @@ using System;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
+// Ask the team if we want this to be apart of the Add Course Form or a Seperate form all together. 
+
 namespace TinyCollegeGUI
 {
     public partial class EditCourseForm : Form
