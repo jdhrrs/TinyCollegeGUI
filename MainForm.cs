@@ -100,16 +100,13 @@ namespace TinyCollegeGUI
         private void LoadStudents()
         {
             students = GetAllStudents();
-<<<<<<< HEAD
-           
-=======
+
             // Assuming listBoxStudents is a ListBox control on the form
             listBoxStudents.Items.Clear();
             foreach (var student in students)
             {
                 listBoxStudents.Items.Add(student.ToString());
             }
->>>>>>> 98aae76c5afbd69b0fac9f451b2302b467fc9b43
         }
 
         // Event handler for adding a new student
