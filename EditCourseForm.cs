@@ -19,7 +19,7 @@ namespace TinyCollegeGUI
 
         private void LoadCourseDetails()
         {
-            // Assuming textBoxCourseName and textBoxCourseDescription are textboxes in the form
+            // textBoxCourseName and textBoxCourseDescription are textboxes in the form
             textBoxCourseName.Text = _course.Name;
             textBoxCourseDescription.Text = _course.Description;
         }
@@ -41,7 +41,7 @@ namespace TinyCollegeGUI
                 MessageBox.Show("Failed to update course information.");
             }
         }
-           // SQLite Update usi9ng DB 
+           // SQLite Update using DB 
       private bool UpdateCourse(Course course)
         {
             using (var connection = new SQLiteConnection(_connectionString))
