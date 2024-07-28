@@ -7,7 +7,7 @@ namespace TinyCollegeGUI
     {
         private DataGridView dataGridViewStudents;
         private Button button1;
-        private IContainer components = null; // Add this line to fix the missing components error
+        private IContainer components = null; // Added this line to fix the missing components error
 
         protected override void Dispose(bool disposing)
         {

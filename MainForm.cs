@@ -112,7 +112,7 @@ namespace TinyCollegeGUI
         private void LoadStudents()
         {
             students = GetAllStudents();
-            // Update your UI here, e.g., bind students to a ListBox or DataGridView
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
