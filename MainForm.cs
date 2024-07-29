@@ -156,7 +156,8 @@ namespace TinyCollegeGUI
 
         }
     }
-
+   
+    
     public class Student
     {
         public int StudentId { get; set; }
