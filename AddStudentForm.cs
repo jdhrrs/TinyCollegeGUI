@@ -15,7 +15,7 @@ namespace TinyCollegeGUI
             InitializeComponent();
         }
 
-        // Handle the Add button click event
+        // Handle the Add button click
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             // Generate a new student ID by calling GetNextStudentId from the main form
