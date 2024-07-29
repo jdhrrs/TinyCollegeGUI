@@ -1,4 +1,4 @@
-﻿namespace TinyCollegeGUI
+namespace TinyCollegeGUI
 {
     partial class MainForm
     {
@@ -134,9 +134,9 @@
             // statusStrip
             // 
             statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
-            statusStrip.Location = new Point(0, 588);
+            statusStrip.Location = new Point(0, 477);
             statusStrip.Name = "statusStrip";
-            statusStrip.Size = new Size(812, 22);
+            statusStrip.Size = new Size(884, 22);
             statusStrip.TabIndex = 9;
             statusStrip.Text = "statusStrip";
             // 
@@ -162,7 +162,7 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(812, 610);
+            ClientSize = new Size(884, 499);
             Controls.Add(label1);
             Controls.Add(statusStrip);
             Controls.Add(button8);
