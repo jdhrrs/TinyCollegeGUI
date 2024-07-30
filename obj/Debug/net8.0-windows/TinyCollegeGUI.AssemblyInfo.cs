@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TinyCollegeGUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c06cdc2b9c99ef91ec02a9da202ea57cb9bc32c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+865dfd723293df16a7a16c0c213be18c713e5aca")]
 [assembly: System.Reflection.AssemblyProductAttribute("TinyCollegeGUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TinyCollegeGUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PdQa4KEtqsY=",
+  "dgSpecHash": "fXgOufgq4xQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\owner\\Source\\Repos\\TinyCollegeGUI\\TinyCollegeGUI.csproj",
+  "projectFilePath": "C:\\Users\\owner\\source\\repos\\TinyCollegeGUI\\TinyCollegeGUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\owner\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\owner\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
