@@ -8,7 +8,6 @@ C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeG
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.csproj.CoreCompileInputs.cache
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.sourcelink.json
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.csproj.AssemblyReference.cache
-C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.AllCoursesForm.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.EnrollAStudentInACourseForm.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.WhatCoursesAStudentEnrolled.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.WhoIsInACourseForm.resources
@@ -38,5 +37,6 @@ C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeG
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.genruntimeconfig.cache
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\ref\TinyCollegeGUI.dll
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.DisplayStudentsForm.resources
-C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollege.AddCourseForm.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollege.EditCourseForm.resources
+C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.DisplayCoursesForm.resources
+C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.AddCourseForm.resources

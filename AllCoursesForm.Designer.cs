@@ -1,16 +1,11 @@
 ﻿namespace TinyCollegeGUI
 {
-    partial class AllCoursesForm
+    partial class DisplayCoursesForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.ListBox listBoxCourses;
+        private System.Windows.Forms.Button btnClose;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,40 +15,45 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            closeButton = new Button();
-            SuspendLayout();
+            this.listBoxCourses = new System.Windows.Forms.ListBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
-            // closeButton
+            // listBoxCourses
             // 
-            closeButton.Location = new Point(340, 313);
-            closeButton.Name = "closeButton";
-            closeButton.Size = new Size(94, 29);
-            closeButton.TabIndex = 0;
-            closeButton.Text = "Close";
-            closeButton.UseVisualStyleBackColor = true;
-            closeButton.Click += closeButton_Click;
+            this.listBoxCourses.FormattingEnabled = true;
+            this.listBoxCourses.ItemHeight = 16;
+            this.listBoxCourses.Location = new System.Drawing.Point(12, 12);
+            this.listBoxCourses.Name = "listBoxCourses";
+            this.listBoxCourses.Size = new System.Drawing.Size(360, 276);
+            this.listBoxCourses.TabIndex = 0;
             // 
-            // AllCoursesForm
+            // btnClose
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(closeButton);
-            Name = "AllCoursesForm";
-            Text = "AllCoursesForm";
-            ResumeLayout(false);
+            this.btnClose.Location = new System.Drawing.Point(297, 294);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // DisplayCoursesForm
+            // 
+            this.ClientSize = new System.Drawing.Size(384, 329);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.listBoxCourses);
+            this.Name = "DisplayCoursesForm";
+            this.Text = "Display All Courses";
+            this.ResumeLayout(false);
+
         }
 
-        #endregion
-
-        private Button closeButton;
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

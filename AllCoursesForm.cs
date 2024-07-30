@@ -1,25 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
 {
-    public partial class AllCoursesForm : Form
+    public partial class DisplayCoursesForm : Form
     {
-        public AllCoursesForm()
+        private string connectionString = "Data Source=TinyCollege.db;Version=3;";
+
+        public DisplayCoursesForm()
         {
             InitializeComponent();
+            LoadCourses();
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
+        private SQLiteConnection GetConnection()
         {
-            this.Close();
+            return new SQLiteConnection(connectionString);
+        }
+
+        private List<Course> GetAllCourses()
+        {
+            var courses = new List<Course>();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT * FROM Courses";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            courses.Add(new Course
+                            {
+                                CourseId = reader.GetInt32(0),
+                                CourseName = reader.GetString(1),
+                                CourseCode = reader.GetString(2),
+                                Credits = reader.GetInt32(3)
+                            });
+                        }
+                    }
+                }
+            }
+            return courses;
+        }
+
+        private void LoadCourses()
+        {
+            var courses = GetAllCourses();
+            foreach (var course in courses)
+            {
+                listBoxCourses.Items.Add(course.ToString());
+            }
         }
     }
 }

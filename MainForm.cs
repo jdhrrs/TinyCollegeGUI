@@ -206,6 +206,12 @@ namespace TinyCollegeGUI
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DisplayCoursesForm displayCoursesForm = new DisplayCoursesForm();
+            displayCoursesForm.ShowDialog(this);
+        }
+
         private string GetSelectedCourseId()
         {
             // Placeholder method to get the selected course ID
