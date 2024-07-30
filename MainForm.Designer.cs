@@ -155,7 +155,8 @@ namespace TinyCollegeGUI
             label1.Size = new Size(533, 34);
             label1.TabIndex = 10;
             label1.Text = "Tiny College Course Tracking System";
-            label1.Click += label1_Click;
+            // Remove this line
+            // label1.Click += label1_Click;
             // 
             // MainForm
             // 
@@ -186,4 +187,3 @@ namespace TinyCollegeGUI
         private Label label1;
     }
 }
-
