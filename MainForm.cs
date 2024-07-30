@@ -122,12 +122,15 @@ namespace TinyCollegeGUI
             addStudentForm.ShowDialog(this); // Pass the main form as owner
         }
 
-        private void AddStudentForm_StudentAdded(Student newStudent)
+        private void AddStudentForm_StudentAdded(object sender, EventArgs e)
         {
-            AddStudent(newStudent.FirstName, newStudent.LastName, newStudent.GPA); // Save to database
-            students.Add(newStudent); // Add to local list
-            toolStripStatusLabel.Text = $"Student {newStudent.FirstName} {newStudent.LastName} added successfully!";
-            LoadStudents(); // Refresh UI
+            if (sender is AddStudentForm addStudentForm && addStudentForm.NewStudent != null)
+            {
+                AddStudent(addStudentForm.NewStudent.FirstName, addStudentForm.NewStudent.LastName, addStudentForm.NewStudent.GPA); // Save to database
+                students.Add(addStudentForm.NewStudent); // Add to local list
+                toolStripStatusLabel.Text = $"Student {addStudentForm.NewStudent.FirstName} {addStudentForm.NewStudent.LastName} added successfully!";
+                LoadStudents(); // Refresh UI
+            }
         }
 
         private void buttonDisplayAllStudents_Click(object sender, EventArgs e)
@@ -150,14 +153,8 @@ namespace TinyCollegeGUI
         {
             buttonDisplayAllStudents_Click(sender, e); // Open DisplayStudentsForm when button2 is clicked
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-   
-     
+
     public class Student
     {
         public int StudentId { get; set; }
@@ -181,3 +178,4 @@ namespace TinyCollegeGUI
         }
     }
 }
+
