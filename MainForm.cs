@@ -1,9 +1,8 @@
-// Reverted back to old file. Went wrong somewhere. 
-
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using TinyCollege;
 
 namespace TinyCollegeGUI
 {
@@ -42,7 +41,20 @@ namespace TinyCollegeGUI
                         GPA REAL
                     );";
 
+                string createCoursesTableQuery = @"
+                    CREATE TABLE IF NOT EXISTS Courses (
+                        CourseID INTEGER PRIMARY KEY AUTOINCREMENT,
+                        CourseName TEXT NOT NULL,
+                        CourseCode TEXT NOT NULL,
+                        Credits INTEGER
+                    );";
+
                 using (var command = new SQLiteCommand(createStudentsTableQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                using (var command = new SQLiteCommand(createCoursesTableQuery, connection))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -111,10 +123,43 @@ namespace TinyCollegeGUI
             return students;
         }
 
+        public List<Course> GetAllCourses()
+        {
+            var courses = new List<Course>();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT * FROM Courses";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            courses.Add(new Course
+                            {
+                                CourseId = reader.GetInt32(0),
+                                CourseName = reader.GetString(1),
+                                CourseCode = reader.GetString(2),
+                                Credits = reader.GetInt32(3)
+                            });
+                        }
+                    }
+                }
+            }
+            return courses;
+        }
+
         private void LoadStudents()
         {
             students = GetAllStudents();
             // Update your UI here, e.g., bind students to a ListBox or DataGridView
+        }
+
+        private void LoadCourses()
+        {
+            var courses = GetAllCourses();
+            // Update your UI here, e.g., bind courses to a ListBox or DataGridView
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -141,9 +186,31 @@ namespace TinyCollegeGUI
             displayStudentsForm.ShowDialog(this); // Open the new form
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonAddCourse_Click(object sender, EventArgs e)
         {
-            // Implement course addition logic here
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.ShowDialog(this);
+        }
+
+        private void buttonEditCourse_Click(object sender, EventArgs e)
+        {
+            string selectedCourseId = GetSelectedCourseId();
+            if (!string.IsNullOrEmpty(selectedCourseId))
+            {
+                EditCourseForm editCourseForm = new EditCourseForm(selectedCourseId);
+                editCourseForm.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Please select a course to edit.");
+            }
+        }
+
+        private string GetSelectedCourseId()
+        {
+            // Placeholder method to get the selected course ID
+            // This should be replaced with actual logic to get the selected course ID
+            return "course-id-placeholder";
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -179,5 +246,27 @@ namespace TinyCollegeGUI
             return $"{FirstName} {LastName} (ID: {StudentId}) - GPA: {GPA}";
         }
     }
-}
 
+    public class Course
+    {
+        public int CourseId { get; set; }
+        public string CourseName { get; set; }
+        public string CourseCode { get; set; }
+        public int Credits { get; set; }
+
+        public Course() { }
+
+        public Course(int courseId, string courseName, string courseCode, int credits)
+        {
+            CourseId = courseId;
+            CourseName = courseName;
+            CourseCode = courseCode;
+            Credits = credits;
+        }
+
+        public override string ToString()
+        {
+            return $"{CourseName} ({CourseCode}) - {Credits} Credits";
+        }
+    }
+}
