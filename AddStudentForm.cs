@@ -1,42 +1,44 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Data.SQLite;
+using System;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
 {
     public partial class AddStudentForm : Form
     {
-        public event Action<Student> StudentAdded;
+        public event EventHandler StudentAdded;
+        public Student NewStudent { get; private set; } // Property to hold the new student
 
         public AddStudentForm()
         {
             InitializeComponent();
         }
 
-        // Handle the Add button click
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            // Generate a new student ID by calling GetNextStudentId from the main form
-            MainForm mainForm = (MainForm)this.Owner;
-            int newStudentId = mainForm.GetNextStudentId();
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
-            double gpa = 0.0; // Default GPA
+            if (double.TryParse(textBoxGPA.Text, out double gpa))
+            {
+                NewStudent = new Student
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    GPA = gpa
+                };
 
-            Student newStudent = new Student(newStudentId, firstName, lastName, gpa);
-
-            // Raise the event to notify the main form
-            StudentAdded?.Invoke(newStudent);
-
-            // Close the form
-            this.Close();
+                StudentAdded?.Invoke(this, EventArgs.Empty); // Raise the event
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid GPA value.");
+            }
         }
 
         private void AddStudentForm_Load(object sender, EventArgs e)
         {
-            // Initialization code goes here 
+            // Event handler code if needed
         }
     }
 }
+
