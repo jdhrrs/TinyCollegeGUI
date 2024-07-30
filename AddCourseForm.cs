@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TinyCollegeGUI
+namespace TinyCollege
 {
     public partial class AddCourseForm : Form
     {
@@ -17,9 +17,23 @@ namespace TinyCollegeGUI
             InitializeComponent();
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
+        private void btnSaveCourse_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Code to save new course to the database
+            string courseName = txtCourseName.Text;
+            string courseCode = txtCourseCode.Text;
+            int credits;
+            if (int.TryParse(txtCredits.Text, out credits))
+            {
+                // Save course to the database
+                // Database.SaveCourse(courseName, courseCode, credits);
+                MessageBox.Show("Course added successfully.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid credits.");
+            }
         }
     }
 }
