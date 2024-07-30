@@ -55,5 +55,10 @@ namespace TinyCollegeGUI
                 listBoxCourses.Items.Add(course.ToString());
             }
         }
+
+        private void listBoxCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
