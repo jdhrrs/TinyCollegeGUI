@@ -1,6 +1,4 @@
-﻿using System.Data.SQLite;
-
-uusing System;
+﻿using System;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
