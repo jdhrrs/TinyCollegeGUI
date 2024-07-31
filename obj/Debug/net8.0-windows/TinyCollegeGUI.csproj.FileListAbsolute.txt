@@ -38,5 +38,5 @@ C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeG
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\ref\TinyCollegeGUI.dll
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.DisplayStudentsForm.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollege.EditCourseForm.resources
-C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.DisplayCoursesForm.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.AddCourseForm.resources
+C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.DisplayAllCoursesForm.resources

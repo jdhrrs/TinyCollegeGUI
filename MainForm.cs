@@ -208,7 +208,7 @@ namespace TinyCollegeGUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DisplayCoursesForm displayCoursesForm = new DisplayCoursesForm();
+            DisplayAllCoursesForm displayCoursesForm = new DisplayAllCoursesForm();
             displayCoursesForm.ShowDialog(this);
         }
 

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
 {
-    public partial class DisplayCoursesForm : Form
+    public partial class DisplayAllCoursesForm : Form
     {
         private string connectionString = "Data Source=TinyCollege.db;Version=3;";
 
-        public DisplayCoursesForm()
+        public DisplayAllCoursesForm()
         {
             InitializeComponent();
             LoadCourses();
@@ -47,14 +48,26 @@ namespace TinyCollegeGUI
             return courses;
         }
 
-        private void LoadCourses()
+        private void LoadCourses(List<Course> courses = null)
         {
-            var courses = GetAllCourses();
+            if (courses == null)
+            {
+                courses = GetAllCourses();
+            }
+
             dataGridViewCourses.Rows.Clear();
             foreach (var course in courses)
             {
                 dataGridViewCourses.Rows.Add(course.CourseId, course.CourseName, course.CourseCode, course.Credits);
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text.Trim().ToLower();
+            var allCourses = GetAllCourses();
+            var filteredCourses = allCourses.Where(c => c.CourseName.ToLower().Contains(searchTerm)).ToList();
+            LoadCourses(filteredCourses);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
