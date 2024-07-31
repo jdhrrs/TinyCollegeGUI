@@ -1,44 +1,39 @@
 using System;
 using System.Windows.Forms;
+using TinyCollege;
 
 namespace TinyCollegeGUI
 {
     public partial class AddStudentForm : Form
     {
         public event EventHandler StudentAdded;
-        public Student NewStudent { get; private set; } // Property to hold the new student
+        public Student NewStudent { get; private set; }
 
         public AddStudentForm()
         {
             InitializeComponent();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void buttonAddStudent_Click(object sender, EventArgs e)
         {
-            string firstName = textBoxFirstName.Text;
-            string lastName = textBoxLastName.Text;
-            if (double.TryParse(textBoxGPA.Text, out double gpa))
+            if (string.IsNullOrWhiteSpace(textBoxFirstName.Text) ||
+                string.IsNullOrWhiteSpace(textBoxLastName.Text) ||
+                string.IsNullOrWhiteSpace(textBoxGPA.Text) ||
+                !double.TryParse(textBoxGPA.Text, out double gpa))
             {
-                NewStudent = new Student
-                {
-                    FirstName = firstName,
-                    LastName = lastName,
-                    GPA = gpa
-                };
-
-                StudentAdded?.Invoke(this, EventArgs.Empty); // Raise the event
-                this.Close();
+                MessageBox.Show("Please enter valid student information.");
+                return;
             }
-            else
+
+            NewStudent = new Student
             {
-                MessageBox.Show("Invalid GPA value.");
-            }
-        }
+                FirstName = textBoxFirstName.Text,
+                LastName = textBoxLastName.Text,
+                GPA = gpa
+            };
 
-        private void AddStudentForm_Load(object sender, EventArgs e)
-        {
-            // Event handler code if needed
+            StudentAdded?.Invoke(this, EventArgs.Empty);
+            this.Close();
         }
     }
 }
-

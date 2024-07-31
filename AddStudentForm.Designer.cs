@@ -2,15 +2,15 @@ namespace TinyCollegeGUI
 {
     partial class AddStudentForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.TextBox textBoxLastName;
+        private System.Windows.Forms.TextBox textBoxGPA;
+        private System.Windows.Forms.Label labelFirstName;
+        private System.Windows.Forms.Label labelLastName;
+        private System.Windows.Forms.Label labelGPA;
+        private System.Windows.Forms.Button buttonAddStudent;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,72 +20,88 @@ namespace TinyCollegeGUI
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxGPA = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.labelFirstName = new System.Windows.Forms.Label();
+            this.labelLastName = new System.Windows.Forms.Label();
+            this.labelGPA = new System.Windows.Forms.Label();
+            this.buttonAddStudent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(12, 12);
+            this.textBoxFirstName.Location = new System.Drawing.Point(130, 20);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(200, 20);
             this.textBoxFirstName.TabIndex = 0;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(12, 38);
+            this.textBoxLastName.Location = new System.Drawing.Point(130, 60);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(200, 20);
             this.textBoxLastName.TabIndex = 1;
             // 
             // textBoxGPA
             // 
-            this.textBoxGPA.Location = new System.Drawing.Point(12, 64);
+            this.textBoxGPA.Location = new System.Drawing.Point(130, 100);
             this.textBoxGPA.Name = "textBoxGPA";
-            this.textBoxGPA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxGPA.Size = new System.Drawing.Size(200, 20);
             this.textBoxGPA.TabIndex = 2;
             // 
-            // buttonAdd
+            // labelFirstName
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(12, 90);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 3;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.labelFirstName.AutoSize = true;
+            this.labelFirstName.Location = new System.Drawing.Point(20, 20);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Size = new System.Drawing.Size(60, 13);
+            this.labelFirstName.TabIndex = 3;
+            this.labelFirstName.Text = "First Name:";
+            // 
+            // labelLastName
+            // 
+            this.labelLastName.AutoSize = true;
+            this.labelLastName.Location = new System.Drawing.Point(20, 60);
+            this.labelLastName.Name = "labelLastName";
+            this.labelLastName.Size = new System.Drawing.Size(61, 13);
+            this.labelLastName.TabIndex = 4;
+            this.labelLastName.Text = "Last Name:";
+            // 
+            // labelGPA
+            // 
+            this.labelGPA.AutoSize = true;
+            this.labelGPA.Location = new System.Drawing.Point(20, 100);
+            this.labelGPA.Name = "labelGPA";
+            this.labelGPA.Size = new System.Drawing.Size(32, 13);
+            this.labelGPA.TabIndex = 5;
+            this.labelGPA.Text = "GPA:";
+            // 
+            // buttonAddStudent
+            // 
+            this.buttonAddStudent.Location = new System.Drawing.Point(130, 140);
+            this.buttonAddStudent.Name = "buttonAddStudent";
+            this.buttonAddStudent.Size = new System.Drawing.Size(200, 23);
+            this.buttonAddStudent.TabIndex = 6;
+            this.buttonAddStudent.Text = "Add Student";
+            this.buttonAddStudent.UseVisualStyleBackColor = true;
+            this.buttonAddStudent.Click += new System.EventHandler(this.buttonAddStudent_Click);
             // 
             // AddStudentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.buttonAdd);
+            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.Controls.Add(this.buttonAddStudent);
+            this.Controls.Add(this.labelGPA);
+            this.Controls.Add(this.labelLastName);
+            this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.textBoxGPA);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
             this.Name = "AddStudentForm";
-            this.Text = "Add Student";
-            this.Load += new System.EventHandler(this.AddStudentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        #endregion
-
-        private System.Windows.Forms.TextBox textBoxFirstName;
-        private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.TextBox textBoxGPA;
-        private System.Windows.Forms.Button buttonAdd;
     }
 }
