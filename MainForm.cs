@@ -15,7 +15,7 @@ namespace TinyCollegeGUI
         {
             InitializeComponent();
             students = new List<Student>();
-            CreateTables(); // Ensure tables are created when the application starts
+            CreateTables(); // Make sure tables are created when the application starts
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -166,13 +166,13 @@ namespace TinyCollegeGUI
         private void LoadStudents()
         {
             students = GetAllStudents();
-            // Update your UI here, e.g., bind students to a ListBox or DataGridView
+            
         }
 
         private void LoadCourses()
         {
             var courses = GetAllCourses();
-            // Update your UI here, e.g., bind courses to a ListBox or DataGridView
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
