@@ -8,17 +8,16 @@ namespace TinyCollegeGUI
 {
     public partial class DisplayAllCoursesForm : Form
     {
-        private string connectionString = "Data Source=TinyCollege.db;Version=3;";
-
         public DisplayAllCoursesForm()
         {
             InitializeComponent();
             LoadCourses();
         }
 
-        private SQLiteConnection GetConnection()
+        private void LoadCourses()
         {
-            return new SQLiteConnection(connectionString);
+            List<Course> courses = GetAllCourses();
+            DisplayCourses(courses);
         }
 
         private List<Course> GetAllCourses()
@@ -27,19 +26,33 @@ namespace TinyCollegeGUI
             using (var connection = GetConnection())
             {
                 connection.Open();
-                string query = "SELECT * FROM Courses";
+                string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            courses.Add(new Course
+                            try
                             {
-                                CourseID = reader.GetString(0),
-                                CourseName = reader.GetString(1),
-                                Credits = reader.GetInt32(3)
-                            });
+                                var course = new Course
+                                {
+                                    CourseID = reader.GetString(0),  // CourseID should be at index 0
+                                    CourseName = reader.GetString(1), // CourseName should be at index 1
+                                    Credits = reader.GetInt32(2)      // Credits should be at index 2
+                                };
+                                courses.Add(course);
+                            }
+                            catch (InvalidCastException e)
+                            {
+                                // Log the error and the state of the reader
+                                MessageBox.Show($"Error reading course data: {e.Message}\nCourseID Value: {reader.GetValue(0)}\nCourseName Value: {reader.GetValue(1)}\nCredits Value: {reader.GetValue(2)}");
+                            }
+                            catch (Exception e)
+                            {
+                                // Handle any other potential exceptions
+                                MessageBox.Show($"Unexpected error: {e.Message}");
+                            }
                         }
                     }
                 }
@@ -47,26 +60,26 @@ namespace TinyCollegeGUI
             return courses;
         }
 
-        private void LoadCourses(List<Course> courses = null)
+        private void DisplayCourses(List<Course> courses)
         {
-            if (courses == null)
-            {
-                courses = GetAllCourses();
-            }
+            dataGridViewCourses.DataSource = null;
+            dataGridViewCourses.DataSource = courses;
+        }
 
-            dataGridViewCourses.Rows.Clear();
-            foreach (var course in courses)
-            {
-                dataGridViewCourses.Rows.Add(course.CourseID, course.CourseName, course.Credits);
-            }
+        private SQLiteConnection GetConnection()
+        {
+            string connectionString = "Data Source=TinyCollege.db;Version=3;";
+            return new SQLiteConnection(connectionString);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string searchTerm = txtSearch.Text.Trim().ToLower();
-            var allCourses = GetAllCourses();
-            var filteredCourses = allCourses.Where(c => c.CourseName.ToLower().Contains(searchTerm)).ToList();
-            LoadCourses(filteredCourses);
+            string searchText = txtSearch.Text.ToLower();
+            List<Course> filteredCourses = GetAllCourses().Where(c =>
+                c.CourseID.ToLower().Contains(searchText) ||
+                c.CourseName.ToLower().Contains(searchText) ||
+                c.Credits.ToString().Contains(searchText)).ToList();
+            DisplayCourses(filteredCourses);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

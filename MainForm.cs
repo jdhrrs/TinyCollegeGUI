@@ -128,19 +128,34 @@ namespace TinyCollegeGUI
             using (var connection = GetConnection())
             {
                 connection.Open();
-                string query = "SELECT * FROM Courses";
+                string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            courses.Add(new Course
+                            try
                             {
-                                CourseID = reader.GetString(0), // Ensure CourseID is retrieved as a string
-                                CourseName = reader.GetString(1),
-                                Credits = reader.GetInt32(2)
-                            });
+                                // Read the data
+                                var course = new Course
+                                {
+                                    CourseID = reader.GetString(0),  // Ensure CourseID is retrieved as a string
+                                    CourseName = reader.GetString(1),
+                                    Credits = reader.GetInt32(2)
+                                };
+                                courses.Add(course);
+                            }
+                            catch (InvalidCastException e)
+                            {
+                                // Log the error and the state of the reader
+                                MessageBox.Show($"Error reading course data: {e.Message}\nColumn Index: {reader.Depth}\nValue: {reader.GetValue(reader.Depth)}");
+                            }
+                            catch (Exception e)
+                            {
+                                // Handle any other potential exceptions
+                                MessageBox.Show($"Unexpected error: {e.Message}");
+                            }
                         }
                     }
                 }
@@ -178,7 +193,7 @@ namespace TinyCollegeGUI
             }
         }
 
-        private void buttonDisplayAllStudents_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
             displayStudentsForm.ShowDialog(this); // Open the new form
@@ -190,40 +205,15 @@ namespace TinyCollegeGUI
             addCourseForm.ShowDialog(this);
         }
 
-        private void buttonEditCourse_Click(object sender, EventArgs e)
-        {
-            string selectedCourseId = GetSelectedCourseId();
-            if (!string.IsNullOrEmpty(selectedCourseId))
-            {
-                EditCourseForm editCourseForm = new EditCourseForm(selectedCourseId);
-                editCourseForm.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Please select a course to edit.");
-            }
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
-            DisplayAllCoursesForm displayCoursesForm = new DisplayAllCoursesForm();
-            displayCoursesForm.ShowDialog(this);
-        }
-
-        private string GetSelectedCourseId()
-        {
-            // Put logic to get the selected course ID here.
-            return "course-id-placeholder";
+            DisplayAllCoursesForm displayAllCoursesForm = new DisplayAllCoursesForm();
+            displayAllCoursesForm.ShowDialog(this);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            buttonDisplayAllStudents_Click(sender, e); // Open DisplayStudentsForm when button2 is clicked
         }
     }
 

@@ -3,17 +3,17 @@ namespace TinyCollegeGUI
     partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private StatusStrip statusStrip;
-        private ToolStripStatusLabel toolStripStatusLabel;
-        private Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.Label label1;
 
         protected override void Dispose(bool disposing)
         {
@@ -109,7 +109,6 @@ namespace TinyCollegeGUI
             this.button6.Text = "Display All Courses";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-
             // 
             // button7
             // 
