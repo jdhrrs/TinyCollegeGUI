@@ -36,9 +36,8 @@ namespace TinyCollegeGUI
                         {
                             courses.Add(new Course
                             {
-                                CourseId = reader.GetInt32(0),
+                                CourseID = reader.GetString(0),
                                 CourseName = reader.GetString(1),
-                                CourseCode = reader.GetString(2),
                                 Credits = reader.GetInt32(3)
                             });
                         }
@@ -58,7 +57,7 @@ namespace TinyCollegeGUI
             dataGridViewCourses.Rows.Clear();
             foreach (var course in courses)
             {
-                dataGridViewCourses.Rows.Add(course.CourseId, course.CourseName, course.CourseCode, course.Credits);
+                dataGridViewCourses.Rows.Add(course.CourseID, course.CourseName, course.Credits);
             }
         }
 
@@ -73,6 +72,11 @@ namespace TinyCollegeGUI
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridViewCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

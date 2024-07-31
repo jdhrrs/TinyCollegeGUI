@@ -43,9 +43,8 @@ namespace TinyCollegeGUI
 
                 string createCoursesTableQuery = @"
                     CREATE TABLE IF NOT EXISTS Courses (
-                        CourseID INTEGER PRIMARY KEY AUTOINCREMENT,
+                        CourseID TEXT PRIMARY KEY,
                         CourseName TEXT NOT NULL,
-                        CourseCode TEXT NOT NULL,
                         Credits INTEGER
                     );";
 
@@ -138,10 +137,9 @@ namespace TinyCollegeGUI
                         {
                             courses.Add(new Course
                             {
-                                CourseId = reader.GetInt32(0),
+                                CourseID = reader.GetString(0), // Ensure CourseID is retrieved as a string
                                 CourseName = reader.GetString(1),
-                                CourseCode = reader.GetString(2),
-                                Credits = reader.GetInt32(3)
+                                Credits = reader.GetInt32(2)
                             });
                         }
                     }
@@ -212,11 +210,9 @@ namespace TinyCollegeGUI
             displayCoursesForm.ShowDialog(this);
         }
 
-
         private string GetSelectedCourseId()
         {
-            // Placeholder method to get the selected course ID
-            // This should be replaced with actual logic to get the selected course ID
+            // Put logic to get the selected course ID here.
             return "course-id-placeholder";
         }
 
@@ -256,24 +252,22 @@ namespace TinyCollegeGUI
 
     public class Course
     {
-        public int CourseId { get; set; }
+        public string CourseID { get; set; }
         public string CourseName { get; set; }
-        public string CourseCode { get; set; }
         public int Credits { get; set; }
 
         public Course() { }
 
-        public Course(int courseId, string courseName, string courseCode, int credits)
+        public Course(string courseId, string courseName, int credits)
         {
-            CourseId = courseId;
+            CourseID = courseId;
             CourseName = courseName;
-            CourseCode = courseCode;
             Credits = credits;
         }
 
         public override string ToString()
         {
-            return $"{CourseName} ({CourseCode}) - {Credits} Credits";
+            return $"{CourseName} ({CourseID}) - {Credits} Credits";
         }
     }
 }

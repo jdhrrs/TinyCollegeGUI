@@ -3,13 +3,14 @@
     partial class AddCourseForm
     {
         private System.ComponentModel.IContainer components = null;
-        private TextBox txtCourseName;
-        private TextBox txtCourseCode;
-        private TextBox txtCredits;
-        private Button btnSaveCourse;
-        private Label lblCourseName;
-        private Label lblCourseCode;
-        private Label lblCredits;
+        private System.Windows.Forms.Button btnAddCourse;
+        private System.Windows.Forms.Button btnManageCourses;
+        private System.Windows.Forms.TextBox txtCourseID;
+        private System.Windows.Forms.TextBox txtCourseName;
+        private System.Windows.Forms.TextBox txtCredits;
+        private System.Windows.Forms.Label lblCourseID;
+        private System.Windows.Forms.Label lblCourseName;
+        private System.Windows.Forms.Label lblCredits;
 
         protected override void Dispose(bool disposing)
         {
@@ -22,87 +23,98 @@
 
         private void InitializeComponent()
         {
-            this.txtCourseName = new TextBox();
-            this.txtCourseCode = new TextBox();
-            this.txtCredits = new TextBox();
-            this.btnSaveCourse = new Button();
-            this.lblCourseName = new Label();
-            this.lblCourseCode = new Label();
-            this.lblCredits = new Label();
-            this.SuspendLayout();
+            btnAddCourse = new Button();
+            btnManageCourses = new Button();
+            txtCourseID = new TextBox();
+            txtCourseName = new TextBox();
+            txtCredits = new TextBox();
+            lblCourseID = new Label();
+            lblCourseName = new Label();
+            lblCredits = new Label();
+            SuspendLayout();
+            // 
+            // btnAddCourse
+            // 
+            btnAddCourse.Location = new Point(38, 110);
+            btnAddCourse.Name = "btnAddCourse";
+            btnAddCourse.Size = new Size(100, 37);
+            btnAddCourse.TabIndex = 0;
+            btnAddCourse.Text = "Add Course";
+            btnAddCourse.UseVisualStyleBackColor = true;
+            btnAddCourse.Click += btnAddCourse_Click;
+            // 
+            // btnManageCourses
+            // 
+            btnManageCourses.Location = new Point(200, 110);
+            btnManageCourses.Name = "btnManageCourses";
+            btnManageCourses.Size = new Size(100, 37);
+            btnManageCourses.TabIndex = 1;
+            btnManageCourses.Text = "Manage Courses";
+            btnManageCourses.UseVisualStyleBackColor = true;
+            btnManageCourses.Click += btnManageCourses_Click;
+            // 
+            // txtCourseID
+            // 
+            txtCourseID.Location = new Point(100, 20);
+            txtCourseID.Name = "txtCourseID";
+            txtCourseID.Size = new Size(200, 29);
+            txtCourseID.TabIndex = 2;
             // 
             // txtCourseName
             // 
-            this.txtCourseName.Location = new System.Drawing.Point(150, 30);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(200, 22);
-            this.txtCourseName.TabIndex = 0;
-            // 
-            // txtCourseCode
-            // 
-            this.txtCourseCode.Location = new System.Drawing.Point(150, 70);
-            this.txtCourseCode.Name = "txtCourseCode";
-            this.txtCourseCode.Size = new System.Drawing.Size(200, 22);
-            this.txtCourseCode.TabIndex = 1;
+            txtCourseName.Location = new Point(100, 50);
+            txtCourseName.Name = "txtCourseName";
+            txtCourseName.Size = new Size(200, 29);
+            txtCourseName.TabIndex = 3;
             // 
             // txtCredits
             // 
-            this.txtCredits.Location = new System.Drawing.Point(150, 110);
-            this.txtCredits.Name = "txtCredits";
-            this.txtCredits.Size = new System.Drawing.Size(200, 22);
-            this.txtCredits.TabIndex = 2;
+            txtCredits.Location = new Point(100, 80);
+            txtCredits.Name = "txtCredits";
+            txtCredits.Size = new Size(200, 29);
+            txtCredits.TabIndex = 4;
             // 
-            // btnSaveCourse
+            // lblCourseID
             // 
-            this.btnSaveCourse.Location = new System.Drawing.Point(150, 150);
-            this.btnSaveCourse.Name = "btnSaveCourse";
-            this.btnSaveCourse.Size = new System.Drawing.Size(100, 30);
-            this.btnSaveCourse.TabIndex = 3;
-            this.btnSaveCourse.Text = "Save Course";
-            this.btnSaveCourse.UseVisualStyleBackColor = true;
-            this.btnSaveCourse.Click += new System.EventHandler(this.btnSaveCourse_Click);
+            lblCourseID.AutoSize = true;
+            lblCourseID.Location = new Point(10, 20);
+            lblCourseID.Name = "lblCourseID";
+            lblCourseID.Size = new Size(78, 21);
+            lblCourseID.TabIndex = 5;
+            lblCourseID.Text = "Course ID";
             // 
             // lblCourseName
             // 
-            this.lblCourseName.AutoSize = true;
-            this.lblCourseName.Location = new System.Drawing.Point(30, 30);
-            this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(90, 17);
-            this.lblCourseName.TabIndex = 4;
-            this.lblCourseName.Text = "Course Name:";
-            // 
-            // lblCourseCode
-            // 
-            this.lblCourseCode.AutoSize = true;
-            this.lblCourseCode.Location = new System.Drawing.Point(30, 70);
-            this.lblCourseCode.Name = "lblCourseCode";
-            this.lblCourseCode.Size = new System.Drawing.Size(88, 17);
-            this.lblCourseCode.TabIndex = 5;
-            this.lblCourseCode.Text = "Course Code:";
+            lblCourseName.AutoSize = true;
+            lblCourseName.Location = new Point(-2, 50);
+            lblCourseName.Name = "lblCourseName";
+            lblCourseName.Size = new Size(105, 21);
+            lblCourseName.TabIndex = 6;
+            lblCourseName.Text = "Course Name";
             // 
             // lblCredits
             // 
-            this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(30, 110);
-            this.lblCredits.Name = "lblCredits";
-            this.lblCredits.Size = new System.Drawing.Size(52, 17);
-            this.lblCredits.TabIndex = 6;
-            this.lblCredits.Text = "Credits:";
+            lblCredits.AutoSize = true;
+            lblCredits.Location = new Point(10, 80);
+            lblCredits.Name = "lblCredits";
+            lblCredits.Size = new Size(59, 21);
+            lblCredits.TabIndex = 7;
+            lblCredits.Text = "Credits";
             // 
             // AddCourseForm
             // 
-            this.ClientSize = new System.Drawing.Size(400, 200);
-            this.Controls.Add(this.lblCredits);
-            this.Controls.Add(this.lblCourseCode);
-            this.Controls.Add(this.lblCourseName);
-            this.Controls.Add(this.btnSaveCourse);
-            this.Controls.Add(this.txtCredits);
-            this.Controls.Add(this.txtCourseCode);
-            this.Controls.Add(this.txtCourseName);
-            this.Name = "AddCourseForm";
-            this.Text = "Add New Course";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(320, 150);
+            Controls.Add(lblCredits);
+            Controls.Add(lblCourseName);
+            Controls.Add(lblCourseID);
+            Controls.Add(txtCredits);
+            Controls.Add(txtCourseName);
+            Controls.Add(txtCourseID);
+            Controls.Add(btnManageCourses);
+            Controls.Add(btnAddCourse);
+            Name = "AddCourseForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

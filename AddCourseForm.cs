@@ -1,50 +1,37 @@
 ﻿using System;
-using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
 {
     public partial class AddCourseForm : Form
     {
-        private string connectionString = "Data Source=TinyCollege.db;Version=3;";
-
         public AddCourseForm()
         {
             InitializeComponent();
         }
 
-        private SQLiteConnection GetConnection()
+        private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            return new SQLiteConnection(connectionString);
+            // Logic to add a new course
+            string courseID = txtCourseID.Text;
+            string courseName = txtCourseName.Text;
+            int credits = int.Parse(txtCredits.Text);
+
+            // Add the course to your data source (e.g., a list, database)
+            // Example: courses.Add(new Course { CourseID = courseID, CourseName = courseName, Credits = credits });
+
+            // Clear the input fields
+            txtCourseID.Clear();
+            txtCourseName.Clear();
+            txtCredits.Clear();
         }
 
-        private void btnSaveCourse_Click(object sender, EventArgs e)
+        private void btnManageCourses_Click(object sender, EventArgs e)
         {
-            string courseName = txtCourseName.Text;
-            string courseCode = txtCourseCode.Text;
-            int credits;
-            if (int.TryParse(txtCredits.Text, out credits))
-            {
-                using (var connection = GetConnection())
-                {
-                    connection.Open();
-                    string query = "INSERT INTO Courses (CourseName, CourseCode, Credits) VALUES (@CourseName, @CourseCode, @Credits)";
-                    using (var command = new SQLiteCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@CourseName", courseName);
-                        command.Parameters.AddWithValue("@CourseCode", courseCode);
-                        command.Parameters.AddWithValue("@Credits", credits);
-                        command.ExecuteNonQuery();
-                    }
-                }
-                MessageBox.Show("Course added successfully.");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Please enter valid credits.");
-            }
+            ManageCoursesForm manageCoursesForm = new ManageCoursesForm();
+            manageCoursesForm.Show();
         }
     }
 }
+
 
