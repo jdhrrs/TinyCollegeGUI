@@ -6,9 +6,11 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 
 ## Features
 - **Add New Students:** Add new student information to the system.
-- **Display All Students:** View a list of all students in the system. If Admin sees a duplicate, we created a button to remove it. 
+- **Display All Students:** View a list of all students in the system. If Admin sees a duplicate, we created a button to remove it.
+- **Remove Student:** Delete student information from the system.
 - **Add New Courses:** Add new courses to the system.
 - **Display All Courses:** View a list of all courses offered by the college.
+- **Edit Course:** Update the information of an existing course.
 - **Enroll Student in Course:** Enroll a student in a specific course.
 - **Display Students in Course:** View a list of all students enrolled in a specific course.
 - **Display Courses Taken by Student:** View a list of all courses a student is enrolled in.
@@ -17,14 +19,14 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 ## Getting Started
 ### Prerequisites
 - Visual Studio or any C# compatible IDE
-- LiteSQL Tool add on through Visual Studios
+- LiteSQL Tool add-on through Visual Studio
 - .NET Framework
 
 ### Installation
 1. Clone the repository:
-    ```bash
+   
     git clone https://github.com/your-username/tiny-college-GUI.git
-    ```
+    
 2. Open the solution file (`TinyCollege.sln`) in Visual Studio or your preferred IDE.
 
 ### Running the Application
@@ -35,8 +37,10 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 ### Main Menu
 - **Add New Student:** Input student details (name, ID, etc.) and save.
 - **Display All Students:** View and search the list of students.
+- **Remove Student:** Delete a selected student from the system.
 - **Add New Course:** Input course details (course name, code, etc.) and save.
 - **Display All Courses:** View and search the list of courses.
+- **Edit Course:** Update details of an existing course.
 - **Enroll Student:** Select a student and enroll them in a chosen course.
 - **Display Students in Course:** Select a course to view enrolled students.
 - **Display Courses for Student:** Select a student to view their enrolled courses.
@@ -46,7 +50,7 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 - A form will prompt for course credit hours and letter grades, which are then used to calculate and update the student's GPA.
 
 ## Project Structure
-- **CISS311_Dropbox7:** Namespace for the project.
+- **CISS311_Dropbox12:** Namespace for the project.
 - **Forms:** Contains all the forms used in the application.
 - **Models:** Contains data models for students and courses.
 - **Services:** Contains business logic and services for handling student and course operations.
@@ -61,7 +65,8 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 6. As an administrator, I want to view all students in a specific course so that I can manage enrollments.
 7. As an administrator, I want to view all courses a student is enrolled in so that I can manage their academic progress.
 8. As an administrator, I want to update a student's GPA so that their academic performance is accurately reflected.
-
+9. As an administrator, I want to remove a student from the system so that I can keep the records up to date.
+10. As an administrator, I want to edit course information so that I can keep course details current.
 
 ## Authors
 - Justin Harris   -  Student Developer
@@ -75,4 +80,5 @@ This project is licensed under the MIT License - see the `LICENSE.md` file for d
 ## Acknowledgments
 - Professor Miracle for guidance and support throughout the project.
 - Columbia College of Missouri for providing the resources and platform for this project.
+
 
