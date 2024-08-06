@@ -37,7 +37,7 @@ namespace TinyCollegeGUI
                             {
                                 var course = new Course
                                 {
-                                    CourseID = reader.GetString(0),  // CourseID should be at index 0
+                                    CourseID = reader.GetInt32(0).ToString(), // Correcting CourseID to int and converting to string
                                     CourseName = reader.GetString(1), // CourseName should be at index 1
                                     Credits = reader.GetInt32(2)      // Credits should be at index 2
                                 };

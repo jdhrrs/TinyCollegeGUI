@@ -216,48 +216,4 @@ namespace TinyCollegeGUI
             this.Close();
         }
     }
-
-    public class Student
-    {
-        public int StudentId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public double GPA { get; set; }
-
-        public Student() { }
-
-        public Student(int studentId, string firstName, string lastName, double gpa)
-        {
-            StudentId = studentId;
-            FirstName = firstName;
-            LastName = lastName;
-            GPA = gpa;
-        }
-
-        public override string ToString()
-        {
-            return $"{FirstName} {LastName} (ID: {StudentId}) - GPA: {GPA}";
-        }
-    }
-
-    public class Course
-    {
-        public string CourseID { get; set; }
-        public string CourseName { get; set; }
-        public int Credits { get; set; }
-
-        public Course() { }
-
-        public Course(string courseId, string courseName, int credits)
-        {
-            CourseID = courseId;
-            CourseName = courseName;
-            Credits = credits;
-        }
-
-        public override string ToString()
-        {
-            return $"{CourseName} ({CourseID}) - {Credits} Credits";
-        }
-    }
 }
