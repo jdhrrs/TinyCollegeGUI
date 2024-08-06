@@ -45,7 +45,7 @@ namespace TinyCollegeGUI
                     CREATE TABLE IF NOT EXISTS Courses (
                         CourseID TEXT PRIMARY KEY,
                         CourseName TEXT NOT NULL,
-                        Credits INTEGER
+                        Credits INTEGER NOT NULL
                     );";
 
                 using (var command = new SQLiteCommand(createStudentsTableQuery, connection))
@@ -166,13 +166,11 @@ namespace TinyCollegeGUI
         private void LoadStudents()
         {
             students = GetAllStudents();
-            
         }
 
         private void LoadCourses()
         {
             var courses = GetAllCourses();
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
