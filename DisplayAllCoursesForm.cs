@@ -14,12 +14,14 @@ namespace TinyCollegeGUI
             LoadCourses();
         }
 
+        // Load courses from the database and display them in the DataGridView
         private void LoadCourses()
         {
             List<Course> courses = GetAllCourses();
             DisplayCourses(courses);
         }
 
+        // Retrieve all courses from the database
         private List<Course> GetAllCourses()
         {
             var courses = new List<Course>();
@@ -60,18 +62,21 @@ namespace TinyCollegeGUI
             return courses;
         }
 
+        // Display the list of courses in the DataGridView
         private void DisplayCourses(List<Course> courses)
         {
             dataGridViewCourses.DataSource = null;
             dataGridViewCourses.DataSource = courses;
         }
 
+        // Get a connection to the database
         private SQLiteConnection GetConnection()
         {
             string connectionString = "Data Source=TinyCollege.db;Version=3;";
             return new SQLiteConnection(connectionString);
         }
 
+        // Search courses based on the text in the search box
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.ToLower();
@@ -82,12 +87,18 @@ namespace TinyCollegeGUI
             DisplayCourses(filteredCourses);
         }
 
+        // Close the form
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void dataGridViewCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewCourses_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

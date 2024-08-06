@@ -2,15 +2,19 @@
 {
     partial class DisplayAllCoursesForm
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridView dataGridViewCourses;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CourseId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Credits;
+        private System.Windows.Forms.TextBox txtSearch;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,89 +24,102 @@
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            dataGridViewCourses = new DataGridView();
-            CourseId = new DataGridViewTextBoxColumn();
-            CourseName = new DataGridViewTextBoxColumn();
-            Credits = new DataGridViewTextBoxColumn();
-            btnClose = new Button();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
-            SuspendLayout();
+            this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
+            this.CourseIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreditsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
+            this.SuspendLayout();
             // 
             // dataGridViewCourses
             // 
-            dataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCourses.Columns.AddRange(new DataGridViewColumn[] { CourseId, CourseName, Credits });
-            dataGridViewCourses.Location = new Point(12, 50);
-            dataGridViewCourses.Name = "dataGridViewCourses";
-            dataGridViewCourses.RowHeadersWidth = 51;
-            dataGridViewCourses.RowTemplate.Height = 24;
-            dataGridViewCourses.Size = new Size(600, 276);
-            dataGridViewCourses.TabIndex = 0;
+            this.dataGridViewCourses.AutoGenerateColumns = false;
+            this.dataGridViewCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseIDColumn,
+            this.CourseNameColumn,
+            this.CreditsColumn});
+            this.dataGridViewCourses.Location = new System.Drawing.Point(12, 41);
+            this.dataGridViewCourses.Name = "dataGridViewCourses";
+            this.dataGridViewCourses.Size = new System.Drawing.Size(776, 376);
+            this.dataGridViewCourses.TabIndex = 0;
+            this.dataGridViewCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourses_CellContentClick_1);
             // 
-            // CourseId
+            // CourseIDColumn
             // 
-            CourseId.HeaderText = "Course ID";
-            CourseId.MinimumWidth = 6;
-            CourseId.Name = "CourseId";
-            CourseId.Width = 125;
+            this.CourseIDColumn.HeaderText = "Course ID";
+            this.CourseIDColumn.Name = "CourseIDColumn";
             // 
-            // CourseName
+            // CourseNameColumn
             // 
-            CourseName.HeaderText = "Course Name";
-            CourseName.MinimumWidth = 6;
-            CourseName.Name = "CourseName";
-            CourseName.Width = 150;
+            this.CourseNameColumn.HeaderText = "Course Name";
+            this.CourseNameColumn.Name = "CourseNameColumn";
             // 
-            // Credits
+            // CreditsColumn
             // 
-            Credits.HeaderText = "Credits";
-            Credits.MinimumWidth = 6;
-            Credits.Name = "Credits";
-            Credits.Width = 125;
+            this.CreditsColumn.HeaderText = "Credits";
+            this.CreditsColumn.Name = "CreditsColumn";
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(537, 332);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(75, 23);
-            btnClose.TabIndex = 1;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
-            btnClose.Click += btnClose_Click;
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(12, 12);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(200, 29);
-            txtSearch.TabIndex = 2;
+            this.btnClose.Location = new System.Drawing.Point(713, 423);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(218, 12);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(80, 32);
-            btnSearch.TabIndex = 3;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
+            this.btnSearch.Location = new System.Drawing.Point(713, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(12, 12);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(695, 20);
+            this.txtSearch.TabIndex = 3;
             // 
             // DisplayAllCoursesForm
             // 
-            ClientSize = new Size(624, 367);
-            Controls.Add(btnSearch);
-            Controls.Add(txtSearch);
-            Controls.Add(btnClose);
-            Controls.Add(dataGridViewCourses);
-            Name = "DisplayAllCoursesForm";
-            Text = "Display All Courses";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.dataGridViewCourses);
+            this.Name = "DisplayAllCoursesForm";
+            this.Text = "Display All Courses";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreditsColumn;
     }
 }
+
