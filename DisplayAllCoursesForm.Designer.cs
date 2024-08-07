@@ -32,87 +32,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
-            this.CourseIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreditsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
-            this.SuspendLayout();
+            dataGridViewCourses = new DataGridView();
+            CourseIDColumn = new DataGridViewTextBoxColumn();
+            CourseNameColumn = new DataGridViewTextBoxColumn();
+            CreditsColumn = new DataGridViewTextBoxColumn();
+            btnClose = new Button();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
+            SuspendLayout();
             // 
             // dataGridViewCourses
             // 
-            this.dataGridViewCourses.AutoGenerateColumns = false;
-            this.dataGridViewCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CourseIDColumn,
-            this.CourseNameColumn,
-            this.CreditsColumn});
-            this.dataGridViewCourses.Location = new System.Drawing.Point(12, 41);
-            this.dataGridViewCourses.Name = "dataGridViewCourses";
-            this.dataGridViewCourses.Size = new System.Drawing.Size(776, 376);
-            this.dataGridViewCourses.TabIndex = 0;
-            this.dataGridViewCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourses_CellContentClick_1);
+            dataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCourses.Columns.AddRange(new DataGridViewColumn[] { CourseIDColumn, CourseNameColumn, CreditsColumn });
+            dataGridViewCourses.Location = new Point(18, 66);
+            dataGridViewCourses.Margin = new Padding(4, 5, 4, 5);
+            dataGridViewCourses.Name = "dataGridViewCourses";
+            dataGridViewCourses.Size = new Size(1164, 607);
+            dataGridViewCourses.TabIndex = 0;
+            dataGridViewCourses.CellContentClick += dataGridViewCourses_CellContentClick_1;
             // 
             // CourseIDColumn
             // 
-            this.CourseIDColumn.HeaderText = "Course ID";
-            this.CourseIDColumn.Name = "CourseIDColumn";
+            CourseIDColumn.HeaderText = "Course ID";
+            CourseIDColumn.Name = "CourseIDColumn";
             // 
             // CourseNameColumn
             // 
-            this.CourseNameColumn.HeaderText = "Course Name";
-            this.CourseNameColumn.Name = "CourseNameColumn";
+            CourseNameColumn.HeaderText = "Course Name";
+            CourseNameColumn.Name = "CourseNameColumn";
             // 
             // CreditsColumn
             // 
-            this.CreditsColumn.HeaderText = "Credits";
-            this.CreditsColumn.Name = "CreditsColumn";
+            CreditsColumn.HeaderText = "Credits";
+            CreditsColumn.Name = "CreditsColumn";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(713, 423);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.Location = new Point(1070, 683);
+            btnClose.Margin = new Padding(4, 5, 4, 5);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(112, 37);
+            btnClose.TabIndex = 1;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(713, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            btnSearch.Location = new Point(1070, 19);
+            btnSearch.Margin = new Padding(4, 5, 4, 5);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(112, 37);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 12);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(695, 20);
-            this.txtSearch.TabIndex = 3;
+            txtSearch.Location = new Point(18, 19);
+            txtSearch.Margin = new Padding(4, 5, 4, 5);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(1040, 29);
+            txtSearch.TabIndex = 3;
             // 
             // DisplayAllCoursesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dataGridViewCourses);
-            this.Name = "DisplayAllCoursesForm";
-            this.Text = "Display All Courses";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1200, 727);
+            Controls.Add(txtSearch);
+            Controls.Add(btnSearch);
+            Controls.Add(btnClose);
+            Controls.Add(dataGridViewCourses);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "DisplayAllCoursesForm";
+            Text = "Display All Courses";
+            Load += DisplayAllCoursesForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

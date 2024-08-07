@@ -13,79 +13,88 @@
 
         private void InitializeComponent()
         {
-            this.txtCourseName = new TextBox();
-            this.txtCourseCode = new TextBox();
-            this.txtCredits = new TextBox();
-            this.btnSaveCourse = new Button();
-            this.lblCourseName = new Label();
-            this.lblCourseCode = new Label();
-            this.lblCredits = new Label();
-            this.SuspendLayout();
-
+            txtCourseName = new TextBox();
+            txtCourseCode = new TextBox();
+            txtCredits = new TextBox();
+            btnSaveCourse = new Button();
+            lblCourseName = new Label();
+            lblCourseCode = new Label();
+            lblCredits = new Label();
+            SuspendLayout();
+            // 
             // txtCourseName
-            this.txtCourseName.Location = new System.Drawing.Point(150, 30);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(200, 22);
-            this.txtCourseName.TabIndex = 0;
-
+            // 
+            txtCourseName.Location = new Point(150, 30);
+            txtCourseName.Name = "txtCourseName";
+            txtCourseName.Size = new Size(200, 29);
+            txtCourseName.TabIndex = 0;
+            // 
             // txtCourseCode
-            this.txtCourseCode.Location = new System.Drawing.Point(150, 70);
-            this.txtCourseCode.Name = "txtCourseCode";
-            this.txtCourseCode.Size = new System.Drawing.Size(200, 22);
-            this.txtCourseCode.TabIndex = 1;
-
+            // 
+            txtCourseCode.Location = new Point(150, 70);
+            txtCourseCode.Name = "txtCourseCode";
+            txtCourseCode.Size = new Size(200, 29);
+            txtCourseCode.TabIndex = 1;
+            // 
             // txtCredits
-            this.txtCredits.Location = new System.Drawing.Point(150, 110);
-            this.txtCredits.Name = "txtCredits";
-            this.txtCredits.Size = new System.Drawing.Size(200, 22);
-            this.txtCredits.TabIndex = 2;
-
+            // 
+            txtCredits.Location = new Point(150, 110);
+            txtCredits.Name = "txtCredits";
+            txtCredits.Size = new Size(200, 29);
+            txtCredits.TabIndex = 2;
+            // 
             // btnSaveCourse
-            this.btnSaveCourse.Location = new System.Drawing.Point(150, 150);
-            this.btnSaveCourse.Name = "btnSaveCourse";
-            this.btnSaveCourse.Size = new System.Drawing.Size(100, 30);
-            this.btnSaveCourse.TabIndex = 3;
-            this.btnSaveCourse.Text = "Save Course";
-            this.btnSaveCourse.UseVisualStyleBackColor = true;
-            this.btnSaveCourse.Click += new System.EventHandler(this.btnSaveCourse_Click);
-
+            // 
+            btnSaveCourse.Location = new Point(150, 150);
+            btnSaveCourse.Name = "btnSaveCourse";
+            btnSaveCourse.Size = new Size(100, 30);
+            btnSaveCourse.TabIndex = 3;
+            btnSaveCourse.Text = "Save Course";
+            btnSaveCourse.UseVisualStyleBackColor = true;
+            btnSaveCourse.Click += btnSaveCourse_Click;
+            // 
             // lblCourseName
-            this.lblCourseName.AutoSize = true;
-            this.lblCourseName.Location = new System.Drawing.Point(30, 30);
-            this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(90, 17);
-            this.lblCourseName.TabIndex = 4;
-            this.lblCourseName.Text = "Course Name:";
-
+            // 
+            lblCourseName.AutoSize = true;
+            lblCourseName.Location = new Point(30, 30);
+            lblCourseName.Name = "lblCourseName";
+            lblCourseName.Size = new Size(108, 21);
+            lblCourseName.TabIndex = 4;
+            lblCourseName.Text = "Course Name:";
+            // 
             // lblCourseCode
-            this.lblCourseCode.AutoSize = true;
-            this.lblCourseCode.Location = new System.Drawing.Point(30, 70);
-            this.lblCourseCode.Name = "lblCourseCode";
-            this.lblCourseCode.Size = new System.Drawing.Size(88, 17);
-            this.lblCourseCode.TabIndex = 5;
-            this.lblCourseCode.Text = "Course Code:";
-
+            // 
+            lblCourseCode.AutoSize = true;
+            lblCourseCode.Location = new Point(30, 70);
+            lblCourseCode.Name = "lblCourseCode";
+            lblCourseCode.Size = new Size(102, 21);
+            lblCourseCode.TabIndex = 5;
+            lblCourseCode.Text = "Course Code:";
+            // 
             // lblCredits
-            this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(30, 110);
-            this.lblCredits.Name = "lblCredits";
-            this.lblCredits.Size = new System.Drawing.Size(52, 17);
-            this.lblCredits.TabIndex = 6;
-            this.lblCredits.Text = "Credits:";
-
+            // 
+            lblCredits.AutoSize = true;
+            lblCredits.Location = new Point(30, 110);
+            lblCredits.Name = "lblCredits";
+            lblCredits.Size = new Size(62, 21);
+            lblCredits.TabIndex = 6;
+            lblCredits.Text = "Credits:";
+            // 
             // EditCourseForm
-            this.ClientSize = new System.Drawing.Size(400, 200);
-            this.Controls.Add(this.lblCredits);
-            this.Controls.Add(this.lblCourseCode);
-            this.Controls.Add(this.lblCourseName);
-            this.Controls.Add(this.btnSaveCourse);
-            this.Controls.Add(this.txtCredits);
-            this.Controls.Add(this.txtCourseCode);
-            this.Controls.Add(this.txtCourseName);
-            this.Name = "EditCourseForm";
-            this.Text = "Edit Course Information";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(400, 200);
+            Controls.Add(lblCredits);
+            Controls.Add(lblCourseCode);
+            Controls.Add(lblCourseName);
+            Controls.Add(btnSaveCourse);
+            Controls.Add(txtCredits);
+            Controls.Add(txtCourseCode);
+            Controls.Add(txtCourseName);
+            Name = "EditCourseForm";
+            Text = "Edit Course Information";
+            Load += EditCourseForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

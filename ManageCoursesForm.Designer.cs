@@ -139,6 +139,7 @@
             Controls.Add(txtCourseName);
             Controls.Add(txtCourseID);
             Name = "ManageCoursesForm";
+            Load += ManageCoursesForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

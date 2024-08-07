@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -29,7 +30,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
@@ -70,10 +71,10 @@ namespace TinyCollegeGUI
         }
 
         // Get a connection to the database
-        private SQLiteConnection GetConnection()
+        private SqlConnection GetConnection()
         {
-            string connectionString = "Data Source=TinyCollege.db;Version=3;";
-            return new SQLiteConnection(connectionString);
+            string connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
+            return new SqlConnection(connectionString);
         }
 
         // Search courses based on the text in the search box
@@ -99,6 +100,11 @@ namespace TinyCollegeGUI
         }
 
         private void dataGridViewCourses_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DisplayAllCoursesForm_Load(object sender, EventArgs e)
         {
 
         }

@@ -20,7 +20,6 @@ namespace TinyCollegeGUI
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container(); // Initialize components container
             dataGridViewStudents = new DataGridView();
             button1 = new Button();
             ((ISupportInitialize)dataGridViewStudents).BeginInit();
@@ -45,7 +44,7 @@ namespace TinyCollegeGUI
             button1.TabIndex = 1;
             button1.Text = "Remove Selected Student";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(button1_Click);
+            button1.Click += button1_Click;
             // 
             // DisplayStudentsForm
             // 
@@ -54,6 +53,7 @@ namespace TinyCollegeGUI
             Controls.Add(dataGridViewStudents);
             Name = "DisplayStudentsForm";
             Text = "Display Students";
+            Load += DisplayStudentsForm_Load;
             ((ISupportInitialize)dataGridViewStudents).EndInit();
             ResumeLayout(false);
         }

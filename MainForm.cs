@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 using TinyCollege;
 
@@ -9,12 +10,13 @@ namespace TinyCollegeGUI
     public partial class MainForm : Form
     {
         private List<Student> students;
-        private string connectionString = "Data Source=TinyCollege.db;Version=3;";
+        private string connectionString;
 
         public MainForm()
         {
             InitializeComponent();
             students = new List<Student>();
+            connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
             CreateTables(); // Make sure tables are created when the application starts
         }
 
@@ -23,9 +25,9 @@ namespace TinyCollegeGUI
             LoadStudents(); // Load students from the database when the form loads
         }
 
-        private SQLiteConnection GetConnection()
+        private SqlConnection GetConnection()
         {
-            return new SQLiteConnection(connectionString);
+            return new SqlConnection(connectionString);
         }
 
         public void CreateTables()
@@ -34,26 +36,28 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string createStudentsTableQuery = @"
-                    CREATE TABLE IF NOT EXISTS Students (
-                        StudentID INTEGER PRIMARY KEY AUTOINCREMENT,
-                        FirstName TEXT NOT NULL,
-                        LastName TEXT NOT NULL,
-                        GPA REAL
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Students' AND xtype='U')
+                    CREATE TABLE Students (
+                        StudentID INT PRIMARY KEY IDENTITY,
+                        FirstName NVARCHAR(50) NOT NULL,
+                        LastName NVARCHAR(50) NOT NULL,
+                        GPA FLOAT
                     );";
 
                 string createCoursesTableQuery = @"
-                    CREATE TABLE IF NOT EXISTS Courses (
-                        CourseID TEXT PRIMARY KEY,
-                        CourseName TEXT NOT NULL,
-                        Credits INTEGER NOT NULL
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Courses' AND xtype='U')
+                    CREATE TABLE Courses (
+                        CourseID NVARCHAR(50) PRIMARY KEY,
+                        CourseName NVARCHAR(100) NOT NULL,
+                        Credits INT NOT NULL
                     );";
 
-                using (var command = new SQLiteCommand(createStudentsTableQuery, connection))
+                using (var command = new SqlCommand(createStudentsTableQuery, connection))
                 {
                     command.ExecuteNonQuery();
                 }
 
-                using (var command = new SQLiteCommand(createCoursesTableQuery, connection))
+                using (var command = new SqlCommand(createCoursesTableQuery, connection))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -66,7 +70,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "INSERT INTO Students (FirstName, LastName, GPA) VALUES (@FirstName, @LastName, @GPA)";
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@FirstName", firstName);
                     command.Parameters.AddWithValue("@LastName", lastName);
@@ -83,7 +87,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "SELECT MAX(StudentID) FROM Students";
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     var result = command.ExecuteScalar();
                     if (result != DBNull.Value)
@@ -102,7 +106,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "SELECT * FROM Students";
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
@@ -129,7 +133,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {

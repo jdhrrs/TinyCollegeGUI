@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,18 +9,19 @@ namespace TinyCollegeGUI
 {
     public partial class DisplayStudentsForm : Form
     {
-        private string connectionString = "Data Source=TinyCollege.db;Version=3;";
+        private string connectionString;
 
         public DisplayStudentsForm()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
             LoadStudents(); // Load students when the form loads
         }
 
-        // Establish a connection to the SQLite database
-        private SQLiteConnection GetConnection()
+        // Establish a connection to the SQL Server database
+        private SqlConnection GetConnection()
         {
-            return new SQLiteConnection(connectionString);
+            return new SqlConnection(connectionString);
         }
 
         // Retrieve all students from the Students table
@@ -30,7 +32,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "SELECT * FROM Students";
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
@@ -64,7 +66,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "DELETE FROM Students WHERE StudentId = @id";
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@id", studentId);
                     command.ExecuteNonQuery();
@@ -85,6 +87,11 @@ namespace TinyCollegeGUI
             {
                 MessageBox.Show("Please select a student to remove.");
             }
+        }
+
+        private void DisplayStudentsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

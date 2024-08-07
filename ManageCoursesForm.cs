@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TinyCollegeGUI
 {
@@ -95,7 +96,12 @@ namespace TinyCollegeGUI
         private List<Course> GetCourses()
         {
             // Retrieve courses from the data source 
-            return new List<Course>(); 
+            return new List<Course>();
+        }
+
+        private void ManageCoursesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

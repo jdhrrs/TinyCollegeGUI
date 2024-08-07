@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TinyCollege
 {
@@ -35,6 +36,11 @@ namespace TinyCollege
             {
                 MessageBox.Show("Please enter valid credits.");
             }
+        }
+
+        private void EditCourseForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

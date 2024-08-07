@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using TinyCollege;
+using System.Data.SqlClient;
 
 namespace TinyCollegeGUI
 {
@@ -34,6 +35,11 @@ namespace TinyCollegeGUI
 
             StudentAdded?.Invoke(this, EventArgs.Empty);
             this.Close();
+        }
+
+        private void AddStudentForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
