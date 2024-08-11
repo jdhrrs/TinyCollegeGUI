@@ -14,30 +14,29 @@ namespace TinyCollegeGUI
         }
 
         // Event handler for Find button
-        private void buttonFind_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
             using SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString);
-            using SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Student JOIN Instructor ON Student.InstructorId = Instructor.InstructorId WHERE studentId = @studentId", conn);
-            adapter.SelectCommand.Parameters.AddWithValue("studentId", textBoxStudentID.Text);
+            using SqlDataAdapter adapter = new SqlDataAdapter(
+                "SELECT * FROM Students JOIN Instructors ON Students.InstructorId = Instructors.InstructorId WHERE StudentID = @studentId", conn);
+            adapter.SelectCommand.Parameters.AddWithValue("@studentId", txtStudentID.Text);
             DataTable studentTable = new DataTable();
             adapter.Fill(studentTable);
             if (studentTable.Rows.Count < 1)
             {
-                textBoxStudentName.Text = "No student found";
-                labelInstructorNameValue.Text = string.Empty;
-                // Disable the delete button if it exists, in this case we don't have one
+                lblStudentName.Text = "No student found";
+                lblInstructorName.Text = string.Empty;
             }
             else
             {
-                // Enable the delete button if it exists, in this case we don't have one
                 DataRow dr = studentTable.Rows[0];
-                textBoxStudentName.Text = dr["studentName"].ToString();
-                labelInstructorNameValue.Text = dr["instructorName"].ToString();
+                lblStudentName.Text = dr["StudentName"].ToString();
+                lblInstructorName.Text = dr["InstructorName"].ToString();
             }
         }
 
         // Event handler for Close button
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
