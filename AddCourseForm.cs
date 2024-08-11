@@ -1,5 +1,6 @@
-﻿using System;
-using System.Data.SQLite;
+using System;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
@@ -24,7 +25,7 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string query = "INSERT INTO Courses (CourseID, CourseName, Credits) VALUES (@CourseID, @CourseName, @Credits)";
-                using (var command = new SQLiteCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CourseID", courseId);
                     command.Parameters.AddWithValue("@CourseName", courseName);
@@ -39,10 +40,10 @@ namespace TinyCollegeGUI
         }
 
         // Get a connection to the database
-        private SQLiteConnection GetConnection()
+        private SqlConnection GetConnection()
         {
-            string connectionString = "Data Source=TinyCollege.db;Version=3;";
-            return new SQLiteConnection(connectionString);
+            string connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
+            return new SqlConnection(connectionString);
         }
 
         // Event handler for the Add Course button
@@ -71,10 +72,10 @@ namespace TinyCollegeGUI
                 txtCourseName.Clear();
                 txtCredits.Clear();
             }
-            catch (SQLiteException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show($"Error adding course: {ex.Message}");
-                Console.WriteLine($"SQLiteException: {ex.Message}");
+                Console.WriteLine($"SqlException: {ex.Message}");
             }
         }
 
