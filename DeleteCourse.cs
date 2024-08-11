@@ -14,45 +14,42 @@ namespace TinyCollegeGUI
         }
 
         // Event handler for Find button
-        private void buttonFind_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
             using SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString);
-            using SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Course JOIN Instructor ON Course.InstructorId = Instructor.InstructorId WHERE courseId = @courseId", conn);
-            adapter.SelectCommand.Parameters.AddWithValue("courseId", textBoxCourseID.Text);
+            using SqlDataAdapter adapter = new SqlDataAdapter(
+                "SELECT * FROM Courses JOIN Instructors ON Courses.InstructorId = Instructors.InstructorId WHERE CourseID = @courseId", conn);
+            adapter.SelectCommand.Parameters.AddWithValue("@courseId", txtCourseID.Text);
             DataTable courseTable = new DataTable();
             adapter.Fill(courseTable);
             if (courseTable.Rows.Count < 1)
             {
-                labelCourseNameValue.Text = "No course found";
-                labelInstructorNameValue.Text = string.Empty;
-                buttonDelete.Enabled = false;
+                lblCourseName.Text = "No course found";
+                lblInstructorName.Text = string.Empty;
+                btnDelete.Enabled = false;
             }
             else
             {
-                buttonDelete.Enabled = true;
+                btnDelete.Enabled = true;
                 DataRow dr = courseTable.Rows[0];
-                labelCourseNameValue.Text = dr["courseName"].ToString();
-                labelInstructorNameValue.Text = dr["instructorName"].ToString();
+                lblCourseName.Text = dr["CourseName"].ToString();
+                lblInstructorName.Text = dr["InstructorName"].ToString();
             }
         }
 
         // Event handler for Delete button
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             using SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString);
-            using SqlCommand comd = new SqlCommand("DELETE FROM Course WHERE courseId = @courseId", conn);
+            using SqlCommand comd = new SqlCommand("DELETE FROM Courses WHERE CourseID = @courseId", conn);
             conn.Open();
-            comd.Parameters.AddWithValue("@courseId", textBoxCourseID.Text);
+            comd.Parameters.AddWithValue("@courseId", txtCourseID.Text);
             comd.ExecuteNonQuery();
             MessageBox.Show("Course deleted.");
-            // Clear the labels and disable the delete button
-            labelCourseNameValue.Text = string.Empty;
-            labelInstructorNameValue.Text = string.Empty;
-            buttonDelete.Enabled = false;
         }
 
         // Event handler for Close button
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
