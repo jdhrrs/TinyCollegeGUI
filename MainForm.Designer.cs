@@ -11,6 +11,9 @@ namespace TinyCollegeGUI
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonDeleteCourse;
+        private System.Windows.Forms.Button buttonFindStudent;
+        private System.Windows.Forms.Button buttonFindCourse;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Label label1;
@@ -34,6 +37,9 @@ namespace TinyCollegeGUI
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.buttonDeleteCourse = new System.Windows.Forms.Button();
+            this.buttonFindStudent = new System.Windows.Forms.Button();
+            this.buttonFindCourse = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -133,14 +139,50 @@ namespace TinyCollegeGUI
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // buttonDeleteCourse
+            // 
+            this.buttonDeleteCourse.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonDeleteCourse.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteCourse.Location = new System.Drawing.Point(750, 97);
+            this.buttonDeleteCourse.Name = "buttonDeleteCourse";
+            this.buttonDeleteCourse.Size = new System.Drawing.Size(211, 77);
+            this.buttonDeleteCourse.TabIndex = 9;
+            this.buttonDeleteCourse.Text = "Delete a Course";
+            this.buttonDeleteCourse.UseVisualStyleBackColor = false;
+            this.buttonDeleteCourse.Click += new System.EventHandler(this.buttonDeleteCourse_Click);
+            // 
+            // buttonFindStudent
+            // 
+            this.buttonFindStudent.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonFindStudent.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFindStudent.Location = new System.Drawing.Point(750, 180);
+            this.buttonFindStudent.Name = "buttonFindStudent";
+            this.buttonFindStudent.Size = new System.Drawing.Size(211, 71);
+            this.buttonFindStudent.TabIndex = 10;
+            this.buttonFindStudent.Text = "Find Student";
+            this.buttonFindStudent.UseVisualStyleBackColor = false;
+            this.buttonFindStudent.Click += new System.EventHandler(this.buttonFindStudent_Click);
+            // 
+            // buttonFindCourse
+            // 
+            this.buttonFindCourse.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonFindCourse.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFindCourse.Location = new System.Drawing.Point(750, 257);
+            this.buttonFindCourse.Name = "buttonFindCourse";
+            this.buttonFindCourse.Size = new System.Drawing.Size(211, 75);
+            this.buttonFindCourse.TabIndex = 11;
+            this.buttonFindCourse.Text = "Find Course";
+            this.buttonFindCourse.UseVisualStyleBackColor = false;
+            this.buttonFindCourse.Click += new System.EventHandler(this.buttonFindCourse_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 477);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(884, 22);
-            this.statusStrip.TabIndex = 9;
+            this.statusStrip.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip.TabIndex = 12;
             this.statusStrip.Text = "statusStrip";
             // 
             // toolStripStatusLabel
@@ -156,7 +198,7 @@ namespace TinyCollegeGUI
             this.label1.Location = new System.Drawing.Point(167, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(533, 34);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 13;
             this.label1.Text = "Tiny College Course Tracking System";
             // 
             // MainForm
@@ -164,9 +206,12 @@ namespace TinyCollegeGUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(884, 499);
+            this.ClientSize = new System.Drawing.Size(1008, 499);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip);
+            this.Controls.Add(this.buttonFindCourse);
+            this.Controls.Add(this.buttonFindStudent);
+            this.Controls.Add(this.buttonDeleteCourse);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
