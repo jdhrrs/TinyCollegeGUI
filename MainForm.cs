@@ -33,7 +33,7 @@ namespace TinyCollegeGUI
         }
 
         // Method to create tables if they do not exist
-        public void CreateTables()
+        private void CreateTables()
         {
             using (var connection = GetConnection())
             {
@@ -110,50 +110,54 @@ namespace TinyCollegeGUI
             return students;
         }
 
-        // Event handlers for the buttons
-        private void button1_Click(object sender, EventArgs e) // Add a Student
+        // Method to retrieve all courses from the database
+        public List<Course> GetAllCourses()
+        {
+            var courses = new List<Course>();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT CourseID, CourseName, Credits FROM Courses";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            courses.Add(new Course
+                            {
+                                CourseID = reader.GetString(0),
+                                CourseName = reader.GetString(1),
+                                Credits = reader.GetInt32(2)
+                            });
+                        }
+                    }
+                }
+            }
+            return courses;
+        }
+
+        // Method to load students into the local list
+        private void LoadStudents()
+        {
+            students = GetAllStudents();
+        }
+
+        // Method to load courses into the local list (not used currently)
+        private void LoadCourses()
+        {
+            var courses = GetAllCourses();
+        }
+
+        // Event handler for the Add Student button
+        private void button1_Click(object sender, EventArgs e)
         {
             AddStudentForm addStudentForm = new AddStudentForm();
             addStudentForm.StudentAdded += AddStudentForm_StudentAdded;
-            addStudentForm.ShowDialog(this);
+            addStudentForm.ShowDialog(this); // Pass the main form as owner
         }
 
-        private void button2_Click(object sender, EventArgs e) // Display All Students
-        {
-            DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
-            displayStudentsForm.ShowDialog(this);
-        }
-
-        private void button3_Click(object sender, EventArgs e) // Find Student
-        {
-            SearchStudent searchStudent = new SearchStudent();
-            searchStudent.ShowDialog(this);
-        }
-
-        private void button5_Click(object sender, EventArgs e) // Add a Course
-        {
-            AddCourseForm addCourseForm = new AddCourseForm();
-            addCourseForm.ShowDialog(this);
-        }
-
-        private void button6_Click(object sender, EventArgs e) // Display All Courses
-        {
-            DisplayAllCoursesForm displayAllCoursesForm = new DisplayAllCoursesForm();
-            displayAllCoursesForm.ShowDialog(this);
-        }
-
-        private void button7_Click(object sender, EventArgs e) // Who is in a Course
-        {
-            WhoIsInACourseForm whoIsInACourseForm = new WhoIsInACourseForm();
-            whoIsInACourseForm.ShowDialog(this);
-        }
-
-        private void button8_Click(object sender, EventArgs e) // Exit
-        {
-            this.Close();
-        }
-
-        // When a student is added, update the UI
+        // Event handler when a student is added from the AddStudentForm
         private void AddStudentForm_StudentAdded(object sender, EventArgs e)
         {
             if (sender is AddStudentForm addStudentForm && addStudentForm.NewStudent != null)
@@ -163,6 +167,47 @@ namespace TinyCollegeGUI
                 toolStripStatusLabel.Text = $"Student {addStudentForm.NewStudent.FirstName} {addStudentForm.NewStudent.LastName} added successfully!";
                 LoadStudents(); // Refresh UI
             }
+        }
+
+        // Event handler for the Display All Students button
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
+            displayStudentsForm.ShowDialog(this); // Open the new form
+        }
+
+        // Event handler for the Enroll a Student in a Course button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EnrollAStudentInACourseForm enrollStudentForm = new EnrollAStudentInACourseForm();
+            enrollStudentForm.ShowDialog(this);
+        }
+
+        // Event handler for the Add a Course button
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.ShowDialog(this);
+        }
+
+        // Event handler for the Display All Courses button
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DisplayAllCoursesForm displayAllCoursesForm = new DisplayAllCoursesForm();
+            displayAllCoursesForm.ShowDialog(this);
+        }
+
+        // Event handler for the Who Is In A Course button
+        private void button7_Click(object sender, EventArgs e)
+        {
+            WhoIsInACourseForm whoIsInACourseForm = new WhoIsInACourseForm();
+            whoIsInACourseForm.ShowDialog(this);
+        }
+
+        // Event handler for the Exit button
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
