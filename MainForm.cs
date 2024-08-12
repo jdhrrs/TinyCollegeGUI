@@ -246,6 +246,13 @@ namespace TinyCollegeGUI
             searchCourse.ShowDialog(this);
         }
 
+        // Event handler for the Who Is In A Course button
+        private void buttonWhoIsInCourse_Click(object sender, EventArgs e)
+        {
+            WhoIsInACourseForm whoIsInACourseForm = new WhoIsInACourseForm();
+            whoIsInACourseForm.ShowDialog(this);
+        }
+
         // Event handler for the Exit button
         private void button8_Click(object sender, EventArgs e)
         {
