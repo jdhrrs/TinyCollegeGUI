@@ -82,26 +82,6 @@ namespace TinyCollegeGUI
             }
         }
 
-        // Method to get the next student ID
-        public int GetNextStudentId()
-        {
-            int nextId = 1; // Default ID
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                string query = "SELECT MAX(StudentID) FROM Students";
-                using (var command = new SqlCommand(query, connection))
-                {
-                    var result = command.ExecuteScalar();
-                    if (result != DBNull.Value)
-                    {
-                        nextId = Convert.ToInt32(result) + 1;
-                    }
-                }
-            }
-            return nextId;
-        }
-
         // Method to retrieve all students from the database
         public List<Student> GetAllStudents()
         {
@@ -130,69 +110,50 @@ namespace TinyCollegeGUI
             return students;
         }
 
-        // Method to retrieve all courses from the database
-        public List<Course> GetAllCourses()
-        {
-            var courses = new List<Course>();
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
-                using (var command = new SqlCommand(query, connection))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            try
-                            {
-                                // Read the data
-                                var course = new Course
-                                {
-                                    CourseID = reader.GetString(0),  // Ensure CourseID is retrieved as a string
-                                    CourseName = reader.GetString(1),
-                                    Credits = reader.GetInt32(2)
-                                };
-                                courses.Add(course);
-                            }
-                            catch (InvalidCastException e)
-                            {
-                                // Log the error and the state of the reader
-                                MessageBox.Show($"Error reading course data: {e.Message}\nColumn Index: {reader.Depth}\nValue: {reader.GetValue(reader.Depth)}");
-                            }
-                            catch (Exception e)
-                            {
-                                // Handle any other potential exceptions
-                                MessageBox.Show($"Unexpected error: {e.Message}");
-                            }
-                        }
-                    }
-                }
-            }
-            return courses;
-        }
-
-        // Method to load students into the local list
-        private void LoadStudents()
-        {
-            students = GetAllStudents();
-        }
-
-        // Method to load courses into the local list (not used currently)
-        private void LoadCourses()
-        {
-            var courses = GetAllCourses();
-        }
-
-        // Event handler for the Add Student button
-        private void button1_Click(object sender, EventArgs e)
+        // Event handlers for the buttons
+        private void button1_Click(object sender, EventArgs e) // Add a Student
         {
             AddStudentForm addStudentForm = new AddStudentForm();
             addStudentForm.StudentAdded += AddStudentForm_StudentAdded;
-            addStudentForm.ShowDialog(this); // Pass the main form as owner
+            addStudentForm.ShowDialog(this);
         }
 
-        // Event handler when a student is added from the AddStudentForm
+        private void button2_Click(object sender, EventArgs e) // Display All Students
+        {
+            DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
+            displayStudentsForm.ShowDialog(this);
+        }
+
+        private void button3_Click(object sender, EventArgs e) // Find Student
+        {
+            SearchStudent searchStudent = new SearchStudent();
+            searchStudent.ShowDialog(this);
+        }
+
+        private void button5_Click(object sender, EventArgs e) // Add a Course
+        {
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.ShowDialog(this);
+        }
+
+        private void button6_Click(object sender, EventArgs e) // Display All Courses
+        {
+            DisplayAllCoursesForm displayAllCoursesForm = new DisplayAllCoursesForm();
+            displayAllCoursesForm.ShowDialog(this);
+        }
+
+        private void button7_Click(object sender, EventArgs e) // Who is in a Course
+        {
+            WhoIsInACourseForm whoIsInACourseForm = new WhoIsInACourseForm();
+            whoIsInACourseForm.ShowDialog(this);
+        }
+
+        private void button8_Click(object sender, EventArgs e) // Exit
+        {
+            this.Close();
+        }
+
+        // When a student is added, update the UI
         private void AddStudentForm_StudentAdded(object sender, EventArgs e)
         {
             if (sender is AddStudentForm addStudentForm && addStudentForm.NewStudent != null)
@@ -202,61 +163,6 @@ namespace TinyCollegeGUI
                 toolStripStatusLabel.Text = $"Student {addStudentForm.NewStudent.FirstName} {addStudentForm.NewStudent.LastName} added successfully!";
                 LoadStudents(); // Refresh UI
             }
-        }
-
-        // Event handler for the Display All Students button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
-            displayStudentsForm.ShowDialog(this); // Open the new form
-        }
-
-        // Event handler for the Add Course button
-        private void buttonAddCourse_Click(object sender, EventArgs e)
-        {
-            AddCourseForm addCourseForm = new AddCourseForm();
-            addCourseForm.ShowDialog(this);
-        }
-
-        // Event handler for the Display All Courses button
-        private void button6_Click(object sender, EventArgs e)
-        {
-            DisplayAllCoursesForm displayAllCoursesForm = new DisplayAllCoursesForm();
-            displayAllCoursesForm.ShowDialog(this);
-        }
-
-        // Event handler for the Delete Course button
-        private void buttonDeleteCourse_Click(object sender, EventArgs e)
-        {
-            DeleteCourse deleteCourse = new DeleteCourse();
-            deleteCourse.ShowDialog(this);
-        }
-
-        // Event handler for the Find Student button
-        private void buttonFindStudent_Click(object sender, EventArgs e)
-        {
-            SearchStudent searchStudent = new SearchStudent();
-            searchStudent.ShowDialog(this);
-        }
-
-        // Event handler for the Find Course button
-        private void buttonFindCourse_Click(object sender, EventArgs e)
-        {
-            SearchCourse searchCourse = new SearchCourse();
-            searchCourse.ShowDialog(this);
-        }
-
-        // Event handler for the Who Is In A Course button
-        private void buttonWhoIsInCourse_Click(object sender, EventArgs e)
-        {
-            WhoIsInACourseForm whoIsInACourseForm = new WhoIsInACourseForm();
-            whoIsInACourseForm.ShowDialog(this);
-        }
-
-        // Event handler for the Exit button
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
