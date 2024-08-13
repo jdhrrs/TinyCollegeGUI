@@ -11,7 +11,9 @@ namespace TinyCollegeGUI
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button btnEditStudent; // New button for editing student information
+        private System.Windows.Forms.Button btnEditStudent;
+        private System.Windows.Forms.Button btnGenerateStudentReport;
+        private System.Windows.Forms.Button btnGenerateCourseReport;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Label label1;
@@ -36,6 +38,8 @@ namespace TinyCollegeGUI
             button7 = new Button();
             button8 = new Button();
             btnEditStudent = new Button();
+            btnGenerateStudentReport = new Button();
+            btnGenerateCourseReport = new Button();
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             label1 = new Label();
@@ -125,9 +129,9 @@ namespace TinyCollegeGUI
             // 
             button8.BackColor = SystemColors.ButtonFace;
             button8.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.Location = new Point(450, 338);
+            button8.Location = new Point(50, 338);
             button8.Name = "button8";
-            button8.Size = new Size(211, 72);
+            button8.Size = new Size(239, 72);
             button8.TabIndex = 8;
             button8.Text = "Exit";
             button8.UseVisualStyleBackColor = false;
@@ -137,20 +141,44 @@ namespace TinyCollegeGUI
             // 
             btnEditStudent.BackColor = SystemColors.ButtonFace;
             btnEditStudent.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditStudent.Location = new Point(50, 338);
+            btnEditStudent.Location = new Point(450, 338);
             btnEditStudent.Name = "btnEditStudent";
-            btnEditStudent.Size = new Size(239, 72);
+            btnEditStudent.Size = new Size(211, 72);
             btnEditStudent.TabIndex = 9;
             btnEditStudent.Text = "Edit Student";
             btnEditStudent.UseVisualStyleBackColor = false;
             btnEditStudent.Click += btnEditStudent_Click;
             // 
+            // btnGenerateStudentReport
+            // 
+            btnGenerateStudentReport.BackColor = SystemColors.ButtonFace;
+            btnGenerateStudentReport.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenerateStudentReport.Location = new Point(50, 430);
+            btnGenerateStudentReport.Name = "btnGenerateStudentReport";
+            btnGenerateStudentReport.Size = new Size(239, 72);
+            btnGenerateStudentReport.TabIndex = 10;
+            btnGenerateStudentReport.Text = "Generate Student Report";
+            btnGenerateStudentReport.UseVisualStyleBackColor = false;
+            btnGenerateStudentReport.Click += btnGenerateStudentReport_Click;
+            // 
+            // btnGenerateCourseReport
+            // 
+            btnGenerateCourseReport.BackColor = SystemColors.ButtonFace;
+            btnGenerateCourseReport.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenerateCourseReport.Location = new Point(450, 430);
+            btnGenerateCourseReport.Name = "btnGenerateCourseReport";
+            btnGenerateCourseReport.Size = new Size(211, 72);
+            btnGenerateCourseReport.TabIndex = 11;
+            btnGenerateCourseReport.Text = "Generate Course Report";
+            btnGenerateCourseReport.UseVisualStyleBackColor = false;
+            btnGenerateCourseReport.Click += btnGenerateCourseReport_Click;
+            // 
             // statusStrip
             // 
             statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
-            statusStrip.Location = new Point(0, 477);
+            statusStrip.Location = new Point(0, 598);
             statusStrip.Name = "statusStrip";
-            statusStrip.Size = new Size(800, 22);
+            statusStrip.Size = new Size(738, 22);
             statusStrip.TabIndex = 12;
             statusStrip.Text = "statusStrip";
             // 
@@ -175,7 +203,7 @@ namespace TinyCollegeGUI
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(800, 499);
+            ClientSize = new Size(738, 620);
             Controls.Add(label1);
             Controls.Add(statusStrip);
             Controls.Add(button7);
@@ -186,6 +214,8 @@ namespace TinyCollegeGUI
             Controls.Add(button1);
             Controls.Add(button8);
             Controls.Add(btnEditStudent);
+            Controls.Add(btnGenerateStudentReport);
+            Controls.Add(btnGenerateCourseReport);
             Cursor = Cursors.AppStarting;
             Name = "MainForm";
             Text = "Welcome";

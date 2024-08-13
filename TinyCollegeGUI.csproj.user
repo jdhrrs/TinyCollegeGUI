@@ -25,6 +25,12 @@
     <Compile Update="EnrollAStudentInACourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GenerateCourseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GenerateStudentReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
