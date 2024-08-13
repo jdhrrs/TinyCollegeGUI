@@ -39,7 +39,7 @@
             CreditsColumn = new DataGridViewTextBoxColumn();
             btnClose = new Button();
             btnSearch = new Button();
-            btnDeleteCourse = new Button(); // Initialize the delete button
+            btnDeleteCourse = new Button();
             txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
             SuspendLayout();
@@ -94,14 +94,14 @@
             // 
             // btnDeleteCourse
             // 
-            btnDeleteCourse.Location = new Point(930, 683); // Set position and size
+            btnDeleteCourse.Location = new Point(854, 683);
             btnDeleteCourse.Margin = new Padding(4, 5, 4, 5);
             btnDeleteCourse.Name = "btnDeleteCourse";
-            btnDeleteCourse.Size = new Size(112, 37);
+            btnDeleteCourse.Size = new Size(188, 37);
             btnDeleteCourse.TabIndex = 4;
             btnDeleteCourse.Text = "Delete Course";
             btnDeleteCourse.UseVisualStyleBackColor = true;
-            btnDeleteCourse.Click += btnDeleteCourse_Click; // Set event handler
+            btnDeleteCourse.Click += btnDeleteCourse_Click;
             // 
             // txtSearch
             // 
@@ -119,7 +119,7 @@
             ClientSize = new Size(1200, 727);
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);
-            Controls.Add(btnDeleteCourse); // Add delete button to the form
+            Controls.Add(btnDeleteCourse);
             Controls.Add(btnClose);
             Controls.Add(dataGridViewCourses);
             Margin = new Padding(4, 5, 4, 5);
