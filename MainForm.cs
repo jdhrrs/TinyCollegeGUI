@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
-using TinyCollege;
 
 namespace TinyCollegeGUI
 {
@@ -39,7 +38,8 @@ namespace TinyCollegeGUI
             {
                 connection.Open();
                 string createStudentsTableQuery = @"
-                    CREATE TABLE IF NOT EXISTS Students (
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Students' AND xtype='U')
+                    CREATE TABLE Students (
                         StudentID INT PRIMARY KEY IDENTITY,
                         FirstName NVARCHAR(50) NOT NULL,
                         LastName NVARCHAR(50) NOT NULL,
@@ -47,7 +47,8 @@ namespace TinyCollegeGUI
                     );";
 
                 string createCoursesTableQuery = @"
-                    CREATE TABLE IF NOT EXISTS Courses (
+                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Courses' AND xtype='U')
+                    CREATE TABLE Courses (
                         CourseID NVARCHAR(50) PRIMARY KEY,
                         CourseName NVARCHAR(100) NOT NULL,
                         Credits INT NOT NULL
