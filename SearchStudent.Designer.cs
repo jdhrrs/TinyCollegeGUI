@@ -13,6 +13,15 @@ namespace TinyCollegeGUI
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonClose;
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -123,15 +132,6 @@ namespace TinyCollegeGUI
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

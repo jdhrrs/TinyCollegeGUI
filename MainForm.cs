@@ -172,7 +172,7 @@ namespace TinyCollegeGUI
         // Event handler for the Display All Students button
         private void button2_Click(object sender, EventArgs e)
         {
-            DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
+            DisplayAllStudentsForm displayStudentsForm = new DisplayAllStudentsForm();
             displayStudentsForm.ShowDialog(this); // Open the new form
         }
 

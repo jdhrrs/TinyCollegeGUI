@@ -14,29 +14,29 @@ namespace TinyCollegeGUI
         }
 
         // Event handler for Find button
-        private void btnFind_Click(object sender, EventArgs e)
+        private void buttonFind_Click(object sender, EventArgs e)
         {
             using SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString);
             using SqlDataAdapter adapter = new SqlDataAdapter(
-                "SELECT * FROM Students JOIN Instructors ON Students.InstructorId = Instructors.InstructorId WHERE StudentID = @studentId", conn);
-            adapter.SelectCommand.Parameters.AddWithValue("@studentId", txtStudentID.Text);
+                "SELECT Students.FirstName, Students.LastName, Instructors.InstructorName FROM Students JOIN Instructors ON Students.InstructorId = Instructors.InstructorId WHERE StudentID = @studentId", conn);
+            adapter.SelectCommand.Parameters.AddWithValue("@studentId", textBoxStudentID.Text);
             DataTable studentTable = new DataTable();
             adapter.Fill(studentTable);
             if (studentTable.Rows.Count < 1)
             {
-                lblStudentName.Text = "No student found";
-                lblInstructorName.Text = string.Empty;
+                textBoxStudentName.Text = "No student found";
+                labelInstructorNameValue.Text = string.Empty;
             }
             else
             {
                 DataRow dr = studentTable.Rows[0];
-                lblStudentName.Text = dr["StudentName"].ToString();
-                lblInstructorName.Text = dr["InstructorName"].ToString();
+                textBoxStudentName.Text = dr["FirstName"].ToString() + " " + dr["LastName"].ToString();
+                labelInstructorNameValue.Text = dr["InstructorName"].ToString();
             }
         }
 
         // Event handler for Close button
-        private void btnClose_Click(object sender, EventArgs e)
+        private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

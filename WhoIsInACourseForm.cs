@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace TinyCollegeGUI
 {
@@ -25,7 +24,7 @@ namespace TinyCollegeGUI
         }
 
         // Event handler for Find button click
-        private void btnFind_Click(object sender, EventArgs e)
+        private void findButton_Click(object sender, EventArgs e)
         {
             using (var connection = GetConnection())
             {
@@ -36,7 +35,7 @@ namespace TinyCollegeGUI
                                "WHERE Enrollments.CourseID = @CourseID";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@CourseID", txtCourseID.Text);
+                    command.Parameters.AddWithValue("@CourseID", textBoxCourseID.Text);
                     using (var reader = command.ExecuteReader())
                     {
                         DataTable dt = new DataTable();
@@ -48,14 +47,9 @@ namespace TinyCollegeGUI
         }
 
         // Event handler for Close button click
-        private void btnClose_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
