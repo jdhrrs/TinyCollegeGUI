@@ -26,153 +26,159 @@ namespace TinyCollegeGUI
 
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.statusStrip.SuspendLayout();
-            this.SuspendLayout();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            statusStrip = new StatusStrip();
+            toolStripStatusLabel = new ToolStripStatusLabel();
+            label1 = new Label();
+            statusStrip.SuspendLayout();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(239, 77);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add a Student";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = SystemColors.ActiveCaption;
+            button1.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(50, 97);
+            button1.Name = "button1";
+            button1.Size = new Size(239, 77);
+            button1.TabIndex = 1;
+            button1.Text = "Add a Student";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(50, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(239, 70);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Display All Students";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.BackColor = SystemColors.ActiveCaption;
+            button2.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(50, 180);
+            button2.Name = "button2";
+            button2.Size = new Size(239, 70);
+            button2.TabIndex = 2;
+            button2.Text = "Display All Students";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(50, 256);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(239, 76);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Enroll a Student in a Course";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = SystemColors.ActiveCaption;
+            button3.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(50, 256);
+            button3.Name = "button3";
+            button3.Size = new Size(239, 76);
+            button3.TabIndex = 3;
+            button3.Text = "Enroll a Student in a Course";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(0, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 0;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(450, 97);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(211, 77);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Add a Course";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.BackColor = SystemColors.ActiveCaption;
+            button5.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(450, 97);
+            button5.Name = "button5";
+            button5.Size = new Size(211, 77);
+            button5.TabIndex = 5;
+            button5.Text = "Add a Course";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(450, 180);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 71);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Display All Courses";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.BackColor = SystemColors.ActiveCaption;
+            button6.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Location = new Point(450, 180);
+            button6.Name = "button6";
+            button6.Size = new Size(211, 71);
+            button6.TabIndex = 6;
+            button6.Text = "Display All Courses";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button7.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(450, 257);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(211, 75);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Who is in a Course";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            button7.BackColor = SystemColors.ActiveCaption;
+            button7.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Location = new Point(450, 257);
+            button7.Name = "button7";
+            button7.Size = new Size(211, 75);
+            button7.TabIndex = 7;
+            button7.Text = "Who is in a Course";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button8.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(50, 338);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(211, 78);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Exit";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            button8.BackColor = SystemColors.ActiveCaption;
+            button8.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button8.Location = new Point(50, 354);
+            button8.Name = "button8";
+            button8.Size = new Size(611, 56);
+            button8.TabIndex = 8;
+            button8.Text = "Exit";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // statusStrip
             // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 477);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip.TabIndex = 12;
-            this.statusStrip.Text = "statusStrip";
+            statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
+            statusStrip.Location = new Point(0, 477);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(800, 22);
+            statusStrip.TabIndex = 12;
+            statusStrip.Text = "statusStrip";
             // 
             // toolStripStatusLabel
             // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            toolStripStatusLabel.Name = "toolStripStatusLabel";
+            toolStripStatusLabel.Size = new Size(0, 17);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 23.9999962F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Ivory;
-            this.label1.Location = new System.Drawing.Point(167, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(533, 34);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Tiny College Course Tracking System";
+            label1.AutoSize = true;
+            label1.Font = new Font("Modern No. 20", 23.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Ivory;
+            label1.Location = new Point(167, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(533, 34);
+            label1.TabIndex = 13;
+            label1.Text = "Tiny College Course Tracking System";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(800, 499);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button8);
-            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.Name = "MainForm";
-            this.Text = "Welcome";
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(800, 499);
+            Controls.Add(label1);
+            Controls.Add(statusStrip);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(button8);
+            Cursor = Cursors.AppStarting;
+            Name = "MainForm";
+            Text = "Welcome";
+            Load += MainForm_Load;
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }
