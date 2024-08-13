@@ -15,14 +15,38 @@ namespace TinyCollegeGUI
         {
             InitializeComponent();
             students = new List<Student>();
-            connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
-            CreateTables(); // Make sure tables are created when the application starts
+
+            try
+            {
+                connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading connection string: " + ex.Message);
+                return;
+            }
+
+            try
+            {
+                CreateTables(); // Make sure tables are created when the application starts
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error initializing the database: " + ex.Message);
+            }
         }
 
         // Event handler for form load
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadStudents(); // Load students from the database when the form loads
+            try
+            {
+                LoadStudents(); // Load students from the database when the form loads
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading students: " + ex.Message);
+            }
         }
 
         // Method to get a connection to the database
