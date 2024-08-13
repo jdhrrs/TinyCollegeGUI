@@ -9,6 +9,7 @@
         private System.Windows.Forms.DataGridView dataGridViewCourses;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnDeleteCourse; // Declare the delete button
         private System.Windows.Forms.TextBox txtSearch;
 
         /// <summary>
@@ -38,6 +39,7 @@
             CreditsColumn = new DataGridViewTextBoxColumn();
             btnClose = new Button();
             btnSearch = new Button();
+            btnDeleteCourse = new Button(); // Initialize the delete button
             txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
             SuspendLayout();
@@ -90,6 +92,17 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
+            // btnDeleteCourse
+            // 
+            btnDeleteCourse.Location = new Point(930, 683); // Set position and size
+            btnDeleteCourse.Margin = new Padding(4, 5, 4, 5);
+            btnDeleteCourse.Name = "btnDeleteCourse";
+            btnDeleteCourse.Size = new Size(112, 37);
+            btnDeleteCourse.TabIndex = 4;
+            btnDeleteCourse.Text = "Delete Course";
+            btnDeleteCourse.UseVisualStyleBackColor = true;
+            btnDeleteCourse.Click += btnDeleteCourse_Click; // Set event handler
+            // 
             // txtSearch
             // 
             txtSearch.Location = new Point(18, 19);
@@ -106,6 +119,7 @@
             ClientSize = new Size(1200, 727);
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);
+            Controls.Add(btnDeleteCourse); // Add delete button to the form
             Controls.Add(btnClose);
             Controls.Add(dataGridViewCourses);
             Margin = new Padding(4, 5, 4, 5);
@@ -124,4 +138,3 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CreditsColumn;
     }
 }
-

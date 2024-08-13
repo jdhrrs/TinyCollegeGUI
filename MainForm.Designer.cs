@@ -42,7 +42,7 @@ namespace TinyCollegeGUI
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
+            button1.BackColor = SystemColors.ButtonFace;
             button1.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(50, 97);
             button1.Name = "button1";
@@ -54,7 +54,7 @@ namespace TinyCollegeGUI
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.ActiveCaption;
+            button2.BackColor = SystemColors.ButtonFace;
             button2.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(50, 180);
             button2.Name = "button2";
@@ -66,7 +66,7 @@ namespace TinyCollegeGUI
             // 
             // button3
             // 
-            button3.BackColor = SystemColors.ActiveCaption;
+            button3.BackColor = SystemColors.ButtonFace;
             button3.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(50, 256);
             button3.Name = "button3";
@@ -85,7 +85,7 @@ namespace TinyCollegeGUI
             // 
             // button5
             // 
-            button5.BackColor = SystemColors.ActiveCaption;
+            button5.BackColor = SystemColors.ButtonFace;
             button5.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(450, 97);
             button5.Name = "button5";
@@ -97,7 +97,7 @@ namespace TinyCollegeGUI
             // 
             // button6
             // 
-            button6.BackColor = SystemColors.ActiveCaption;
+            button6.BackColor = SystemColors.ButtonFace;
             button6.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.Location = new Point(450, 180);
             button6.Name = "button6";
@@ -109,7 +109,7 @@ namespace TinyCollegeGUI
             // 
             // button7
             // 
-            button7.BackColor = SystemColors.ActiveCaption;
+            button7.BackColor = SystemColors.ButtonFace;
             button7.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.Location = new Point(450, 257);
             button7.Name = "button7";
@@ -121,7 +121,7 @@ namespace TinyCollegeGUI
             // 
             // button8
             // 
-            button8.BackColor = SystemColors.ActiveCaption;
+            button8.BackColor = SystemColors.ButtonFace;
             button8.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button8.Location = new Point(50, 354);
             button8.Name = "button8";
@@ -160,7 +160,7 @@ namespace TinyCollegeGUI
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 499);
             Controls.Add(label1);
             Controls.Add(statusStrip);

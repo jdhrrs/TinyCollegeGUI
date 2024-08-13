@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq; // Add this line
+using System.Linq;
 using System.Windows.Forms;
 using System.Configuration;
 
@@ -29,7 +29,7 @@ namespace TinyCollegeGUI
             using (var connection = GetConnection())
             {
                 connection.Open();
-                string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
+                string query = "SELECT CourseID, CourseName, Credits FROM Courses";
                 using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
@@ -48,12 +48,10 @@ namespace TinyCollegeGUI
                             }
                             catch (InvalidCastException e)
                             {
-                                // Log the error and the state of the reader
                                 MessageBox.Show($"Error reading course data: {e.Message}\nCourseID Value: {reader.GetValue(0)}\nCourseName Value: {reader.GetValue(1)}\nCredits Value: {reader.GetValue(2)}");
                             }
                             catch (Exception e)
                             {
-                                // Handle any other potential exceptions
                                 MessageBox.Show($"Unexpected error: {e.Message}");
                             }
                         }
@@ -66,13 +64,9 @@ namespace TinyCollegeGUI
         // Display the list of courses in the DataGridView
         private void DisplayCourses(List<Course> courses)
         {
-            // Clear existing columns
             dataGridViewCourses.Columns.Clear();
-
-            // Set AutoGenerateColumns to false
             dataGridViewCourses.AutoGenerateColumns = false;
 
-            // Define columns manually
             dataGridViewCourses.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "CourseID",
@@ -89,7 +83,6 @@ namespace TinyCollegeGUI
                 HeaderText = "Credits"
             });
 
-            // Bind the list of courses to the DataGridView
             dataGridViewCourses.DataSource = courses;
         }
 
@@ -115,6 +108,39 @@ namespace TinyCollegeGUI
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Delete the selected course
+        private void btnDeleteCourse_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewCourses.SelectedRows.Count > 0)
+            {
+                var selectedCourse = dataGridViewCourses.SelectedRows[0].DataBoundItem as Course;
+                if (selectedCourse != null)
+                {
+                    DeleteCourse(selectedCourse.CourseID);
+                    LoadCourses(); // Refresh the course list
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a course to delete.");
+            }
+        }
+
+        // Method to delete a course from the database
+        private void DeleteCourse(string courseID)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string query = "DELETE FROM Courses WHERE CourseID = @CourseID";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@CourseID", courseID);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         private void dataGridViewCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
