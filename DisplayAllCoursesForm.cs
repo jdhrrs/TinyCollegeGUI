@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq; // Add this line
 using System.Windows.Forms;
-using System.Configuration; // Add this line
+using System.Configuration;
 
 namespace TinyCollegeGUI
 {
@@ -65,7 +66,30 @@ namespace TinyCollegeGUI
         // Display the list of courses in the DataGridView
         private void DisplayCourses(List<Course> courses)
         {
-            dataGridViewCourses.DataSource = null;
+            // Clear existing columns
+            dataGridViewCourses.Columns.Clear();
+
+            // Set AutoGenerateColumns to false
+            dataGridViewCourses.AutoGenerateColumns = false;
+
+            // Define columns manually
+            dataGridViewCourses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "CourseID",
+                HeaderText = "Course ID"
+            });
+            dataGridViewCourses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "CourseName",
+                HeaderText = "Course Name"
+            });
+            dataGridViewCourses.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Credits",
+                HeaderText = "Credits"
+            });
+
+            // Bind the list of courses to the DataGridView
             dataGridViewCourses.DataSource = courses;
         }
 
