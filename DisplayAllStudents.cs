@@ -64,15 +64,37 @@ namespace TinyCollegeGUI
             using (var connection = GetConnection())
             {
                 connection.Open();
-                string query = "DELETE FROM Students WHERE StudentId = @id";
-                using (var command = new SqlCommand(query, connection))
+                using (var transaction = connection.BeginTransaction())
                 {
-                    command.Parameters.AddWithValue("@id", studentId);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        // Delete related enrollments
+                        string deleteEnrollmentsQuery = "DELETE FROM Enrollments WHERE StudentID = @StudentID";
+                        using (var command = new SqlCommand(deleteEnrollmentsQuery, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@StudentID", studentId);
+                            command.ExecuteNonQuery();
+                        }
+
+                        // Delete the student
+                        string deleteStudentQuery = "DELETE FROM Students WHERE StudentId = @id";
+                        using (var command = new SqlCommand(deleteStudentQuery, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@id", studentId);
+                            command.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        MessageBox.Show("Student removed successfully.");
+                        LoadStudents(); // Refresh the list after removal
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Error removing student: {ex.Message}");
+                    }
                 }
             }
-            LoadStudents(); // Refresh the list after removal
-            MessageBox.Show("Student removed successfully.");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,5 +116,4 @@ namespace TinyCollegeGUI
         }
     }
 }
-
 
