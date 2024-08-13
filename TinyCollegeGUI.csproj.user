@@ -7,6 +7,9 @@
     <Compile Update="AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DeleteCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DisplayAllCoursesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -23,6 +26,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ManageCoursesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SearchCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SearchStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="WhatCoursesAStudentEnrolled.cs">
