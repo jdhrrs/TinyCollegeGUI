@@ -21,82 +21,85 @@ namespace TinyCollegeGUI
 
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelCourseID = new System.Windows.Forms.Label();
-            this.textBoxCourseID = new System.Windows.Forms.TextBox();
-            this.findButton = new System.Windows.Forms.Button();
-            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            this.closeButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            labelCourseID = new Label();
+            textBoxCourseID = new TextBox();
+            findButton = new Button();
+            dataGridViewStudents = new DataGridView();
+            closeButton = new Button();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.labelCourseID);
-            this.groupBox1.Controls.Add(this.textBoxCourseID);
-            this.groupBox1.Controls.Add(this.findButton);
-            this.groupBox1.Controls.Add(this.dataGridViewStudents);
-            this.groupBox1.Controls.Add(this.closeButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 348);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Course Data";
+            groupBox1.Controls.Add(labelCourseID);
+            groupBox1.Controls.Add(textBoxCourseID);
+            groupBox1.Controls.Add(findButton);
+            groupBox1.Controls.Add(dataGridViewStudents);
+            groupBox1.Controls.Add(closeButton);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(776, 348);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Course Data";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // labelCourseID
             // 
-            this.labelCourseID.AutoSize = true;
-            this.labelCourseID.Location = new System.Drawing.Point(13, 13);
-            this.labelCourseID.Name = "labelCourseID";
-            this.labelCourseID.Size = new System.Drawing.Size(57, 13);
-            this.labelCourseID.TabIndex = 0;
-            this.labelCourseID.Text = "Course ID:";
+            labelCourseID.AutoSize = true;
+            labelCourseID.Location = new Point(13, 13);
+            labelCourseID.Name = "labelCourseID";
+            labelCourseID.Size = new Size(81, 21);
+            labelCourseID.TabIndex = 0;
+            labelCourseID.Text = "Course ID:";
             // 
             // textBoxCourseID
             // 
-            this.textBoxCourseID.Location = new System.Drawing.Point(76, 10);
-            this.textBoxCourseID.Name = "textBoxCourseID";
-            this.textBoxCourseID.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCourseID.TabIndex = 1;
+            textBoxCourseID.Location = new Point(76, 10);
+            textBoxCourseID.Name = "textBoxCourseID";
+            textBoxCourseID.Size = new Size(100, 29);
+            textBoxCourseID.TabIndex = 1;
             // 
             // findButton
             // 
-            this.findButton.Location = new System.Drawing.Point(182, 8);
-            this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(75, 23);
-            this.findButton.TabIndex = 2;
-            this.findButton.Text = "Find";
-            this.findButton.UseVisualStyleBackColor = true;
-            this.findButton.Click += new System.EventHandler(this.findButton_Click);
+            findButton.Location = new Point(182, 8);
+            findButton.Name = "findButton";
+            findButton.Size = new Size(75, 23);
+            findButton.TabIndex = 2;
+            findButton.Text = "Find";
+            findButton.UseVisualStyleBackColor = true;
+            findButton.Click += findButton_Click;
             // 
             // dataGridViewStudents
             // 
-            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudents.Location = new System.Drawing.Point(16, 37);
-            this.dataGridViewStudents.Name = "dataGridViewStudents";
-            this.dataGridViewStudents.Size = new System.Drawing.Size(441, 150);
-            this.dataGridViewStudents.TabIndex = 3;
+            dataGridViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewStudents.Location = new Point(16, 37);
+            dataGridViewStudents.Name = "dataGridViewStudents";
+            dataGridViewStudents.Size = new Size(441, 150);
+            dataGridViewStudents.TabIndex = 3;
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(382, 193);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
-            this.closeButton.TabIndex = 4;
-            this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            closeButton.Location = new Point(382, 193);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(75, 23);
+            closeButton.TabIndex = 4;
+            closeButton.Text = "Close";
+            closeButton.UseVisualStyleBackColor = true;
+            closeButton.Click += closeButton_Click;
             // 
             // WhoIsInACourseForm
             // 
-            this.ClientSize = new System.Drawing.Size(469, 228);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "WhoIsInACourseForm";
-            this.Text = "Who Is In A Course";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(469, 228);
+            Controls.Add(groupBox1);
+            Name = "WhoIsInACourseForm";
+            Text = "Who Is In A Course";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
+            ResumeLayout(false);
         }
     }
 }
