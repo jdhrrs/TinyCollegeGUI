@@ -1,14 +1,14 @@
-﻿namespace TinyCollegeGUI
+namespace TinyCollegeGUI
 {
     partial class EnrollAStudentInACourseForm
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,113 +23,105 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            groupBox1 = new GroupBox();
-            closeButton = new Button();
-            enrollButton = new Button();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            groupBox1.SuspendLayout();
-            SuspendLayout();
+            // Initialize components
+            this.label1 = new System.Windows.Forms.Label();
+            this.CoursecomboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.StudentcomboBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(187, 96);
-            label1.Name = "label1";
-            label1.Size = new Size(125, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Select A Student:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Select A Course";
+            
             // 
-            // groupBox1
+            // CoursecomboBox
             // 
-            groupBox1.Controls.Add(closeButton);
-            groupBox1.Controls.Add(enrollButton);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(14, 13);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(873, 367);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Enrollment Data";
-            groupBox1.Enter += groupBox1_Enter;
+            this.CoursecomboBox.FormattingEnabled = true;
+            this.CoursecomboBox.Location = new System.Drawing.Point(37, 82);
+            this.CoursecomboBox.Name = "CoursecomboBox";
+            this.CoursecomboBox.Size = new System.Drawing.Size(151, 28);
+            this.CoursecomboBox.TabIndex = 1;
+            
             // 
             // closeButton
             // 
-            closeButton.Location = new Point(494, 285);
-            closeButton.Name = "closeButton";
-            closeButton.Size = new Size(106, 30);
-            closeButton.TabIndex = 5;
-            closeButton.Text = "Cl&ose";
-            closeButton.UseVisualStyleBackColor = true;
-            closeButton.Click += closeButton_Click;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(273, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Select A Student";
+            
             // 
-            // enrollButton
+            // StudentcomboBox
             // 
-            enrollButton.Location = new Point(260, 285);
-            enrollButton.Name = "enrollButton";
-            enrollButton.Size = new Size(106, 30);
-            enrollButton.TabIndex = 4;
-            enrollButton.Text = "&Enroll";
-            enrollButton.UseVisualStyleBackColor = true;
+            this.StudentcomboBox.FormattingEnabled = true;
+            this.StudentcomboBox.Location = new System.Drawing.Point(256, 82);
+            this.StudentcomboBox.Name = "StudentcomboBox";
+            this.StudentcomboBox.Size = new System.Drawing.Size(151, 28);
+            this.StudentcomboBox.TabIndex = 3;
+            
             // 
-            // comboBox2
+            // button1
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(494, 186);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(236, 29);
-            comboBox2.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(170, 165);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "A&dd";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
             // 
-            // comboBox1
+            // button2
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(494, 100);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(236, 29);
-            comboBox1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(187, 182);
-            label2.Name = "label2";
-            label2.Size = new Size(119, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Select a Course:";
+            this.button2.Location = new System.Drawing.Point(170, 261);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 29);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "C&lose";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            
             // 
             // EnrollAStudentInACourseForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(900, 472);
-            Controls.Add(groupBox1);
-            Name = "EnrollAStudentInACourseForm";
-            Text = "Enroll A Student In A Course";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(482, 352);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.StudentcomboBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CoursecomboBox);
+            this.Controls.Add(this.label1);
+            this.Name = "EnrollAStudentInACourseForm";
+            this.Text = "EnrollAStudentInACourseForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private GroupBox groupBox1;
-        private Label label2;
-        private Button closeButton;
-        private Button enrollButton;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CoursecomboBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox StudentcomboBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

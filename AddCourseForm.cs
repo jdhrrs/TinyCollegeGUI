@@ -1,6 +1,6 @@
-﻿using System;
-using System.Configuration;
+using System;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI

@@ -1,8 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
@@ -40,9 +38,9 @@ namespace TinyCollegeGUI
                             {
                                 var course = new Course
                                 {
-                                    CourseID = reader.GetInt32(0).ToString(), // Correcting CourseID to int and converting to string
-                                    CourseName = reader.GetString(1), // CourseName should be at index 1
-                                    Credits = reader.GetInt32(2)      // Credits should be at index 2
+                                    CourseID = reader.GetString(0),
+                                    CourseName = reader.GetString(1),
+                                    Credits = reader.GetInt32(2)
                                 };
                                 courses.Add(course);
                             }

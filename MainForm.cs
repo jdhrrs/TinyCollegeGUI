@@ -9,8 +9,8 @@ namespace TinyCollegeGUI
 {
     public partial class MainForm : Form
     {
-        private List<Student> students;
-        private string connectionString;
+        private List<Student> students; // List to hold student data
+        private string connectionString; // Connection string for SQL Server
 
         public MainForm()
         {
@@ -20,24 +20,26 @@ namespace TinyCollegeGUI
             CreateTables(); // Make sure tables are created when the application starts
         }
 
+        // Event handler for form load
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadStudents(); // Load students from the database when the form loads
         }
 
+        // Method to get a connection to the database
         private SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);
         }
 
-        public void CreateTables()
+        // Method to create tables if they do not exist
+        private void CreateTables()
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
                 string createStudentsTableQuery = @"
-                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Students' AND xtype='U')
-                    CREATE TABLE Students (
+                    CREATE TABLE IF NOT EXISTS Students (
                         StudentID INT PRIMARY KEY IDENTITY,
                         FirstName NVARCHAR(50) NOT NULL,
                         LastName NVARCHAR(50) NOT NULL,
@@ -45,8 +47,7 @@ namespace TinyCollegeGUI
                     );";
 
                 string createCoursesTableQuery = @"
-                    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Courses' AND xtype='U')
-                    CREATE TABLE Courses (
+                    CREATE TABLE IF NOT EXISTS Courses (
                         CourseID NVARCHAR(50) PRIMARY KEY,
                         CourseName NVARCHAR(100) NOT NULL,
                         Credits INT NOT NULL
@@ -64,6 +65,7 @@ namespace TinyCollegeGUI
             }
         }
 
+        // Method to add a student to the database
         public void AddStudent(string firstName, string lastName, double gpa)
         {
             using (var connection = GetConnection())
@@ -80,25 +82,7 @@ namespace TinyCollegeGUI
             }
         }
 
-        public int GetNextStudentId()
-        {
-            int nextId = 1; // Default ID
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                string query = "SELECT MAX(StudentID) FROM Students";
-                using (var command = new SqlCommand(query, connection))
-                {
-                    var result = command.ExecuteScalar();
-                    if (result != DBNull.Value)
-                    {
-                        nextId = Convert.ToInt32(result) + 1;
-                    }
-                }
-            }
-            return nextId;
-        }
-
+        // Method to retrieve all students from the database
         public List<Student> GetAllStudents()
         {
             var students = new List<Student>();
@@ -126,40 +110,26 @@ namespace TinyCollegeGUI
             return students;
         }
 
+        // Method to retrieve all courses from the database
         public List<Course> GetAllCourses()
         {
             var courses = new List<Course>();
             using (var connection = GetConnection())
             {
                 connection.Open();
-                string query = "SELECT CourseID, CourseName, Credits FROM Courses"; // Explicitly select columns
+                string query = "SELECT CourseID, CourseName, Credits FROM Courses";
                 using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            try
+                            courses.Add(new Course
                             {
-                                // Read the data
-                                var course = new Course
-                                {
-                                    CourseID = reader.GetString(0),  // Ensure CourseID is retrieved as a string
-                                    CourseName = reader.GetString(1),
-                                    Credits = reader.GetInt32(2)
-                                };
-                                courses.Add(course);
-                            }
-                            catch (InvalidCastException e)
-                            {
-                                // Log the error and the state of the reader
-                                MessageBox.Show($"Error reading course data: {e.Message}\nColumn Index: {reader.Depth}\nValue: {reader.GetValue(reader.Depth)}");
-                            }
-                            catch (Exception e)
-                            {
-                                // Handle any other potential exceptions
-                                MessageBox.Show($"Unexpected error: {e.Message}");
-                            }
+                                CourseID = reader.GetString(0),
+                                CourseName = reader.GetString(1),
+                                Credits = reader.GetInt32(2)
+                            });
                         }
                     }
                 }
@@ -167,16 +137,19 @@ namespace TinyCollegeGUI
             return courses;
         }
 
+        // Method to load students into the local list
         private void LoadStudents()
         {
             students = GetAllStudents();
         }
 
+        // Method to load courses into the local list (not used currently)
         private void LoadCourses()
         {
             var courses = GetAllCourses();
         }
 
+        // Event handler for the Add Student button
         private void button1_Click(object sender, EventArgs e)
         {
             AddStudentForm addStudentForm = new AddStudentForm();
@@ -184,6 +157,7 @@ namespace TinyCollegeGUI
             addStudentForm.ShowDialog(this); // Pass the main form as owner
         }
 
+        // Event handler when a student is added from the AddStudentForm
         private void AddStudentForm_StudentAdded(object sender, EventArgs e)
         {
             if (sender is AddStudentForm addStudentForm && addStudentForm.NewStudent != null)
@@ -195,24 +169,42 @@ namespace TinyCollegeGUI
             }
         }
 
+        // Event handler for the Display All Students button
         private void button2_Click(object sender, EventArgs e)
         {
             DisplayStudentsForm displayStudentsForm = new DisplayStudentsForm();
             displayStudentsForm.ShowDialog(this); // Open the new form
         }
 
-        private void buttonAddCourse_Click(object sender, EventArgs e)
+        // Event handler for the Enroll a Student in a Course button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EnrollAStudentInACourseForm enrollStudentForm = new EnrollAStudentInACourseForm();
+            enrollStudentForm.ShowDialog(this);
+        }
+
+        // Event handler for the Add a Course button
+        private void button5_Click(object sender, EventArgs e)
         {
             AddCourseForm addCourseForm = new AddCourseForm();
             addCourseForm.ShowDialog(this);
         }
 
+        // Event handler for the Display All Courses button
         private void button6_Click(object sender, EventArgs e)
         {
             DisplayAllCoursesForm displayAllCoursesForm = new DisplayAllCoursesForm();
             displayAllCoursesForm.ShowDialog(this);
         }
 
+        // Event handler for the Who Is In A Course button
+        private void button7_Click(object sender, EventArgs e)
+        {
+            WhoIsInACourseForm whoIsInACourseForm = new WhoIsInACourseForm();
+            whoIsInACourseForm.ShowDialog(this);
+        }
+
+        // Event handler for the Exit button
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();

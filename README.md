@@ -70,9 +70,10 @@ This project is a part of the Advanced Agile Software Development course (CISS 3
 
 ## Authors
 - Justin Harris   -  Student Developer
+- Madison Mato    -  Student Developer
 - Luis Aragon     -  Student Developer
 - Phil Richey     -  Student Developer
-- Madison Mato    -  Student Developer
+
 
 ## License
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.

@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace TinyCollegeGUI
 {
-    public partial class DisplayStudentsForm : Form
+    public partial class DisplayAllStudentsForm : Form
     {
         private string connectionString;
 
-        public DisplayStudentsForm()
+        public DisplayAllStudentsForm()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
