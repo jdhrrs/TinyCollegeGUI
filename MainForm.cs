@@ -21,10 +21,6 @@ Key Features:
 - TextBox and Button controls for searching and performing actions
 - Event handlers for handling user interactions
 - Exception handling for database operations
-
-Delete Student Functionality:
-The program allows users to delete a student from the database. When a student is deleted,
-all related records such as course enrollments are also removed to maintain database integrity.
 */
 
 
