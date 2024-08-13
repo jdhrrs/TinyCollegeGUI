@@ -37,3 +37,5 @@ C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeG
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.DeleteCourse.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.SearchCourse.resources
 C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.SearchStudent.resources
+C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.EditStudentForm.resources
+C:\Users\owner\source\repos\TinyCollegeGUI\obj\Debug\net8.0-windows\TinyCollegeGUI.SelectStudentForm.resources

@@ -11,6 +11,7 @@ namespace TinyCollegeGUI
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnEditStudent; // New button for editing student information
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Label label1;
@@ -34,6 +35,7 @@ namespace TinyCollegeGUI
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
+            btnEditStudent = new Button();
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             label1 = new Label();
@@ -123,13 +125,25 @@ namespace TinyCollegeGUI
             // 
             button8.BackColor = SystemColors.ButtonFace;
             button8.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.Location = new Point(50, 354);
+            button8.Location = new Point(50, 338);
             button8.Name = "button8";
-            button8.Size = new Size(611, 56);
+            button8.Size = new Size(239, 72);
             button8.TabIndex = 8;
             button8.Text = "Exit";
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
+            // 
+            // btnEditStudent
+            // 
+            btnEditStudent.BackColor = SystemColors.ButtonFace;
+            btnEditStudent.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditStudent.Location = new Point(450, 338);
+            btnEditStudent.Name = "btnEditStudent";
+            btnEditStudent.Size = new Size(211, 72);
+            btnEditStudent.TabIndex = 9;
+            btnEditStudent.Text = "Edit Student";
+            btnEditStudent.UseVisualStyleBackColor = false;
+            btnEditStudent.Click += btnEditStudent_Click;
             // 
             // statusStrip
             // 
@@ -171,6 +185,7 @@ namespace TinyCollegeGUI
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button8);
+            Controls.Add(btnEditStudent);
             Cursor = Cursors.AppStarting;
             Name = "MainForm";
             Text = "Welcome";
@@ -182,4 +197,3 @@ namespace TinyCollegeGUI
         }
     }
 }
-
