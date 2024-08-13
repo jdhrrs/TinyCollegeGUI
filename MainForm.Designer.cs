@@ -129,7 +129,7 @@ namespace TinyCollegeGUI
             // 
             button8.BackColor = SystemColors.ButtonFace;
             button8.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.Location = new Point(50, 338);
+            button8.Location = new Point(50, 416);
             button8.Name = "button8";
             button8.Size = new Size(239, 72);
             button8.TabIndex = 8;
@@ -153,7 +153,7 @@ namespace TinyCollegeGUI
             // 
             btnGenerateStudentReport.BackColor = SystemColors.ButtonFace;
             btnGenerateStudentReport.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGenerateStudentReport.Location = new Point(50, 430);
+            btnGenerateStudentReport.Location = new Point(50, 338);
             btnGenerateStudentReport.Name = "btnGenerateStudentReport";
             btnGenerateStudentReport.Size = new Size(239, 72);
             btnGenerateStudentReport.TabIndex = 10;
@@ -165,7 +165,7 @@ namespace TinyCollegeGUI
             // 
             btnGenerateCourseReport.BackColor = SystemColors.ButtonFace;
             btnGenerateCourseReport.Font = new Font("Modern No. 20", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGenerateCourseReport.Location = new Point(450, 430);
+            btnGenerateCourseReport.Location = new Point(450, 416);
             btnGenerateCourseReport.Name = "btnGenerateCourseReport";
             btnGenerateCourseReport.Size = new Size(211, 72);
             btnGenerateCourseReport.TabIndex = 11;
