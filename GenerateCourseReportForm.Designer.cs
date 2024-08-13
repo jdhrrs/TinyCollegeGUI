@@ -26,7 +26,7 @@
             // lblCriteria
             // 
             lblCriteria.AutoSize = true;
-            lblCriteria.Location = new Point(30, 30);
+            lblCriteria.Location = new Point(12, 30);
             lblCriteria.Name = "lblCriteria";
             lblCriteria.Size = new Size(115, 21);
             lblCriteria.TabIndex = 0;
@@ -51,6 +51,7 @@
             // 
             // GenerateCourseReportForm
             // 
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(400, 150);
             Controls.Add(lblCriteria);
             Controls.Add(txtCriteria);

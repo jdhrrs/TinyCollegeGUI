@@ -60,5 +60,10 @@ namespace TinyCollegeGUI
                 MessageBox.Show("Please select a student to edit.");
             }
         }
+
+        private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
