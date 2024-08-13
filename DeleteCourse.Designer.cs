@@ -16,128 +16,128 @@ namespace TinyCollegeGUI
 
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelCourseID = new System.Windows.Forms.Label();
-            this.labelCourseName = new System.Windows.Forms.Label();
-            this.labelInstructorName = new System.Windows.Forms.Label();
-            this.textBoxCourseID = new System.Windows.Forms.TextBox();
-            this.labelCourseNameValue = new System.Windows.Forms.Label();
-            this.labelInstructorNameValue = new System.Windows.Forms.Label();
-            this.buttonFind = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            labelCourseID = new Label();
+            labelCourseName = new Label();
+            labelInstructorName = new Label();
+            textBoxCourseID = new TextBox();
+            labelCourseNameValue = new Label();
+            labelInstructorNameValue = new Label();
+            buttonFind = new Button();
+            buttonDelete = new Button();
+            buttonClose = new Button();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.labelCourseID);
-            this.groupBox1.Controls.Add(this.labelCourseName);
-            this.groupBox1.Controls.Add(this.labelInstructorName);
-            this.groupBox1.Controls.Add(this.textBoxCourseID);
-            this.groupBox1.Controls.Add(this.labelCourseNameValue);
-            this.groupBox1.Controls.Add(this.labelInstructorNameValue);
-            this.groupBox1.Controls.Add(this.buttonFind);
-            this.groupBox1.Controls.Add(this.buttonDelete);
-            this.groupBox1.Controls.Add(this.buttonClose);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 200);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Delete a course";
+            groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.Controls.Add(labelCourseID);
+            groupBox1.Controls.Add(labelCourseName);
+            groupBox1.Controls.Add(labelInstructorName);
+            groupBox1.Controls.Add(textBoxCourseID);
+            groupBox1.Controls.Add(labelCourseNameValue);
+            groupBox1.Controls.Add(labelInstructorNameValue);
+            groupBox1.Controls.Add(buttonFind);
+            groupBox1.Controls.Add(buttonDelete);
+            groupBox1.Controls.Add(buttonClose);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(360, 200);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Delete a course";
             // 
             // labelCourseID
             // 
-            this.labelCourseID.AutoSize = true;
-            this.labelCourseID.Location = new System.Drawing.Point(6, 22);
-            this.labelCourseID.Name = "labelCourseID";
-            this.labelCourseID.Size = new System.Drawing.Size(59, 13);
-            this.labelCourseID.TabIndex = 0;
-            this.labelCourseID.Text = "Course ID:";
+            labelCourseID.AutoSize = true;
+            labelCourseID.Location = new Point(6, 22);
+            labelCourseID.Name = "labelCourseID";
+            labelCourseID.Size = new Size(81, 21);
+            labelCourseID.TabIndex = 0;
+            labelCourseID.Text = "Course ID:";
             // 
             // labelCourseName
             // 
-            this.labelCourseName.AutoSize = true;
-            this.labelCourseName.Location = new System.Drawing.Point(6, 48);
-            this.labelCourseName.Name = "labelCourseName";
-            this.labelCourseName.Size = new System.Drawing.Size(74, 13);
-            this.labelCourseName.TabIndex = 1;
-            this.labelCourseName.Text = "Course Name:";
+            labelCourseName.AutoSize = true;
+            labelCourseName.Location = new Point(6, 48);
+            labelCourseName.Name = "labelCourseName";
+            labelCourseName.Size = new Size(108, 21);
+            labelCourseName.TabIndex = 1;
+            labelCourseName.Text = "Course Name:";
             // 
             // labelInstructorName
             // 
-            this.labelInstructorName.AutoSize = true;
-            this.labelInstructorName.Location = new System.Drawing.Point(6, 74);
-            this.labelInstructorName.Name = "labelInstructorName";
-            this.labelInstructorName.Size = new System.Drawing.Size(84, 13);
-            this.labelInstructorName.TabIndex = 2;
-            this.labelInstructorName.Text = "Instructor Name:";
+            labelInstructorName.AutoSize = true;
+            labelInstructorName.Location = new Point(6, 74);
+            labelInstructorName.Name = "labelInstructorName";
+            labelInstructorName.Size = new Size(126, 21);
+            labelInstructorName.TabIndex = 2;
+            labelInstructorName.Text = "Instructor Name:";
             // 
             // textBoxCourseID
             // 
-            this.textBoxCourseID.Location = new System.Drawing.Point(96, 19);
-            this.textBoxCourseID.Name = "textBoxCourseID";
-            this.textBoxCourseID.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCourseID.TabIndex = 3;
+            textBoxCourseID.Location = new Point(96, 19);
+            textBoxCourseID.Name = "textBoxCourseID";
+            textBoxCourseID.Size = new Size(100, 29);
+            textBoxCourseID.TabIndex = 3;
             // 
             // labelCourseNameValue
             // 
-            this.labelCourseNameValue.AutoSize = true;
-            this.labelCourseNameValue.Location = new System.Drawing.Point(96, 48);
-            this.labelCourseNameValue.Name = "labelCourseNameValue";
-            this.labelCourseNameValue.Size = new System.Drawing.Size(0, 13);
-            this.labelCourseNameValue.TabIndex = 4;
+            labelCourseNameValue.AutoSize = true;
+            labelCourseNameValue.Location = new Point(96, 48);
+            labelCourseNameValue.Name = "labelCourseNameValue";
+            labelCourseNameValue.Size = new Size(0, 21);
+            labelCourseNameValue.TabIndex = 4;
             // 
             // labelInstructorNameValue
             // 
-            this.labelInstructorNameValue.AutoSize = true;
-            this.labelInstructorNameValue.Location = new System.Drawing.Point(96, 74);
-            this.labelInstructorNameValue.Name = "labelInstructorNameValue";
-            this.labelInstructorNameValue.Size = new System.Drawing.Size(0, 13);
-            this.labelInstructorNameValue.TabIndex = 5;
+            labelInstructorNameValue.AutoSize = true;
+            labelInstructorNameValue.Location = new Point(96, 74);
+            labelInstructorNameValue.Name = "labelInstructorNameValue";
+            labelInstructorNameValue.Size = new Size(0, 21);
+            labelInstructorNameValue.TabIndex = 5;
             // 
             // buttonFind
             // 
-            this.buttonFind.Location = new System.Drawing.Point(202, 17);
-            this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(75, 23);
-            this.buttonFind.TabIndex = 6;
-            this.buttonFind.Text = "Find";
-            this.buttonFind.UseVisualStyleBackColor = true;
-            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            buttonFind.Location = new Point(262, 14);
+            buttonFind.Name = "buttonFind";
+            buttonFind.Size = new Size(92, 34);
+            buttonFind.TabIndex = 6;
+            buttonFind.Text = "Find";
+            buttonFind.UseVisualStyleBackColor = true;
+            buttonFind.Click += buttonFind_Click;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Enabled = false;
-            this.buttonDelete.Location = new System.Drawing.Point(202, 43);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 7;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            buttonDelete.Enabled = false;
+            buttonDelete.Location = new Point(262, 54);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(92, 30);
+            buttonDelete.TabIndex = 7;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(202, 72);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 8;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            buttonClose.Location = new Point(262, 90);
+            buttonClose.Name = "buttonClose";
+            buttonClose.Size = new Size(92, 28);
+            buttonClose.TabIndex = 8;
+            buttonClose.Text = "Close";
+            buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += buttonClose_Click;
             // 
             // DeleteCourse
             // 
-            this.ClientSize = new System.Drawing.Size(384, 221);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "DeleteCourse";
-            this.Text = "DeleteCourse";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            ClientSize = new Size(384, 221);
+            Controls.Add(groupBox1);
+            Name = "DeleteCourse";
+            Text = "DeleteCourse";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         protected override void Dispose(bool disposing)

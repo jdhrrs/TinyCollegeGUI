@@ -36,103 +36,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCourseID = new System.Windows.Forms.Label();
-            this.lblCourseName = new System.Windows.Forms.Label();
-            this.lblCredits = new System.Windows.Forms.Label();
-            this.txtCourseID = new System.Windows.Forms.TextBox();
-            this.txtCourseName = new System.Windows.Forms.TextBox();
-            this.txtCredits = new System.Windows.Forms.TextBox();
-            this.btnAddCourse = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblCourseID = new Label();
+            lblCourseName = new Label();
+            lblCredits = new Label();
+            txtCourseID = new TextBox();
+            txtCourseName = new TextBox();
+            txtCredits = new TextBox();
+            btnAddCourse = new Button();
+            btnClose = new Button();
+            SuspendLayout();
             // 
             // lblCourseID
             // 
-            this.lblCourseID.AutoSize = true;
-            this.lblCourseID.Location = new System.Drawing.Point(12, 9);
-            this.lblCourseID.Name = "lblCourseID";
-            this.lblCourseID.Size = new System.Drawing.Size(58, 13);
-            this.lblCourseID.TabIndex = 0;
-            this.lblCourseID.Text = "Course ID:";
+            lblCourseID.AutoSize = true;
+            lblCourseID.Location = new Point(18, 15);
+            lblCourseID.Margin = new Padding(4, 0, 4, 0);
+            lblCourseID.Name = "lblCourseID";
+            lblCourseID.Size = new Size(81, 21);
+            lblCourseID.TabIndex = 0;
+            lblCourseID.Text = "Course ID:";
             // 
             // lblCourseName
             // 
-            this.lblCourseName.AutoSize = true;
-            this.lblCourseName.Location = new System.Drawing.Point(12, 35);
-            this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(74, 13);
-            this.lblCourseName.TabIndex = 1;
-            this.lblCourseName.Text = "Course Name:";
+            lblCourseName.AutoSize = true;
+            lblCourseName.Location = new Point(18, 57);
+            lblCourseName.Margin = new Padding(4, 0, 4, 0);
+            lblCourseName.Name = "lblCourseName";
+            lblCourseName.Size = new Size(108, 21);
+            lblCourseName.TabIndex = 1;
+            lblCourseName.Text = "Course Name:";
             // 
             // lblCredits
             // 
-            this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(12, 61);
-            this.lblCredits.Name = "lblCredits";
-            this.lblCredits.Size = new System.Drawing.Size(42, 13);
-            this.lblCredits.TabIndex = 2;
-            this.lblCredits.Text = "Credits:";
+            lblCredits.AutoSize = true;
+            lblCredits.Location = new Point(18, 99);
+            lblCredits.Margin = new Padding(4, 0, 4, 0);
+            lblCredits.Name = "lblCredits";
+            lblCredits.Size = new Size(62, 21);
+            lblCredits.TabIndex = 2;
+            lblCredits.Text = "Credits:";
             // 
             // txtCourseID
             // 
-            this.txtCourseID.Location = new System.Drawing.Point(92, 6);
-            this.txtCourseID.Name = "txtCourseID";
-            this.txtCourseID.Size = new System.Drawing.Size(180, 20);
-            this.txtCourseID.TabIndex = 3;
+            txtCourseID.Location = new Point(138, 10);
+            txtCourseID.Margin = new Padding(4, 5, 4, 5);
+            txtCourseID.Name = "txtCourseID";
+            txtCourseID.Size = new Size(268, 29);
+            txtCourseID.TabIndex = 3;
             // 
             // txtCourseName
             // 
-            this.txtCourseName.Location = new System.Drawing.Point(92, 32);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(180, 20);
-            this.txtCourseName.TabIndex = 4;
+            txtCourseName.Location = new Point(138, 52);
+            txtCourseName.Margin = new Padding(4, 5, 4, 5);
+            txtCourseName.Name = "txtCourseName";
+            txtCourseName.Size = new Size(268, 29);
+            txtCourseName.TabIndex = 4;
             // 
             // txtCredits
             // 
-            this.txtCredits.Location = new System.Drawing.Point(92, 58);
-            this.txtCredits.Name = "txtCredits";
-            this.txtCredits.Size = new System.Drawing.Size(180, 20);
-            this.txtCredits.TabIndex = 5;
+            txtCredits.Location = new Point(138, 94);
+            txtCredits.Margin = new Padding(4, 5, 4, 5);
+            txtCredits.Name = "txtCredits";
+            txtCredits.Size = new Size(268, 29);
+            txtCredits.TabIndex = 5;
             // 
             // btnAddCourse
             // 
-            this.btnAddCourse.Location = new System.Drawing.Point(92, 84);
-            this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(75, 23);
-            this.btnAddCourse.TabIndex = 6;
-            this.btnAddCourse.Text = "Add Course";
-            this.btnAddCourse.UseVisualStyleBackColor = true;
-            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
+            btnAddCourse.Location = new Point(138, 136);
+            btnAddCourse.Margin = new Padding(4, 5, 4, 5);
+            btnAddCourse.Name = "btnAddCourse";
+            btnAddCourse.Size = new Size(112, 37);
+            btnAddCourse.TabIndex = 6;
+            btnAddCourse.Text = "Add Course";
+            btnAddCourse.UseVisualStyleBackColor = true;
+            btnAddCourse.Click += btnAddCourse_Click;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(197, 84);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.Location = new Point(296, 136);
+            btnClose.Margin = new Padding(4, 5, 4, 5);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(112, 37);
+            btnClose.TabIndex = 7;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // AddCourseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 119);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAddCourse);
-            this.Controls.Add(this.txtCredits);
-            this.Controls.Add(this.txtCourseName);
-            this.Controls.Add(this.txtCourseID);
-            this.Controls.Add(this.lblCredits);
-            this.Controls.Add(this.lblCourseName);
-            this.Controls.Add(this.lblCourseID);
-            this.Name = "AddCourseForm";
-            this.Text = "Add Course";
-            this.Load += new System.EventHandler(this.AddCourseForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(426, 192);
+            Controls.Add(btnClose);
+            Controls.Add(btnAddCourse);
+            Controls.Add(txtCredits);
+            Controls.Add(txtCourseName);
+            Controls.Add(txtCourseID);
+            Controls.Add(lblCredits);
+            Controls.Add(lblCourseName);
+            Controls.Add(lblCourseID);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "AddCourseForm";
+            Text = "Add Course";
+            Load += AddCourseForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

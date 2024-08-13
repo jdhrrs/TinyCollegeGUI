@@ -82,6 +82,7 @@
             // 
             // EditCourseForm
             // 
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(400, 200);
             Controls.Add(lblCredits);
             Controls.Add(lblCourseCode);

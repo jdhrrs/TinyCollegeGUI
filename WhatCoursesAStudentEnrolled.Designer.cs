@@ -42,6 +42,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.ActiveCaption;
             groupBox1.Controls.Add(findButton);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(textBox1);
@@ -131,6 +132,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(900, 472);
             Controls.Add(closeButton);
             Controls.Add(courseListBox);

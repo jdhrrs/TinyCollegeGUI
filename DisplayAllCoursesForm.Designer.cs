@@ -102,6 +102,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1200, 727);
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);

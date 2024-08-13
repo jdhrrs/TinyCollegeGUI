@@ -28,91 +28,84 @@ namespace TinyCollegeGUI
         /// </summary>
         private void InitializeComponent()
         {
-            // Initialize components
-            this.label1 = new System.Windows.Forms.Label();
-            this.CoursecomboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.StudentcomboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            
+            label1 = new Label();
+            CoursecomboBox = new ComboBox();
+            label2 = new Label();
+            StudentcomboBox = new ComboBox();
+            button1 = new Button();
+            button2 = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Select A Course";
-            
+            label1.AutoSize = true;
+            label1.Location = new Point(66, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(118, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Select A Course";
             // 
             // CoursecomboBox
             // 
-            this.CoursecomboBox.FormattingEnabled = true;
-            this.CoursecomboBox.Location = new System.Drawing.Point(37, 82);
-            this.CoursecomboBox.Name = "CoursecomboBox";
-            this.CoursecomboBox.Size = new System.Drawing.Size(151, 28);
-            this.CoursecomboBox.TabIndex = 1;
-            
+            CoursecomboBox.FormattingEnabled = true;
+            CoursecomboBox.Location = new Point(42, 86);
+            CoursecomboBox.Name = "CoursecomboBox";
+            CoursecomboBox.Size = new Size(169, 29);
+            CoursecomboBox.TabIndex = 1;
             // 
-            // closeButton
+            // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Select A Student";
-            
+            label2.AutoSize = true;
+            label2.Location = new Point(307, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(122, 21);
+            label2.TabIndex = 2;
+            label2.Text = "Select A Student";
             // 
             // StudentcomboBox
             // 
-            this.StudentcomboBox.FormattingEnabled = true;
-            this.StudentcomboBox.Location = new System.Drawing.Point(256, 82);
-            this.StudentcomboBox.Name = "StudentcomboBox";
-            this.StudentcomboBox.Size = new System.Drawing.Size(151, 28);
-            this.StudentcomboBox.TabIndex = 3;
-            
+            StudentcomboBox.FormattingEnabled = true;
+            StudentcomboBox.Location = new Point(288, 86);
+            StudentcomboBox.Name = "StudentcomboBox";
+            StudentcomboBox.Size = new Size(169, 29);
+            StudentcomboBox.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(170, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "A&dd";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            
+            button1.Location = new Point(191, 173);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 30);
+            button1.TabIndex = 4;
+            button1.Text = "A&dd";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(170, 261);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "C&lose";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            
+            button2.Location = new Point(191, 274);
+            button2.Name = "button2";
+            button2.Size = new Size(106, 30);
+            button2.TabIndex = 5;
+            button2.Text = "C&lose";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // EnrollAStudentInACourseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 352);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.StudentcomboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.CoursecomboBox);
-            this.Controls.Add(this.label1);
-            this.Name = "EnrollAStudentInACourseForm";
-            this.Text = "EnrollAStudentInACourseForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(542, 370);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(StudentcomboBox);
+            Controls.Add(label2);
+            Controls.Add(CoursecomboBox);
+            Controls.Add(label1);
+            Name = "EnrollAStudentInACourseForm";
+            Text = "EnrollAStudentInACourseForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

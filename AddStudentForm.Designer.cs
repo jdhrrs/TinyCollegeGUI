@@ -83,7 +83,7 @@ namespace TinyCollegeGUI
             // 
             buttonAddStudent.Location = new Point(130, 140);
             buttonAddStudent.Name = "buttonAddStudent";
-            buttonAddStudent.Size = new Size(200, 23);
+            buttonAddStudent.Size = new Size(200, 33);
             buttonAddStudent.TabIndex = 6;
             buttonAddStudent.Text = "Add Student";
             buttonAddStudent.UseVisualStyleBackColor = true;
@@ -91,6 +91,7 @@ namespace TinyCollegeGUI
             // 
             // AddStudentForm
             // 
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(400, 200);
             Controls.Add(buttonAddStudent);
             Controls.Add(labelGPA);

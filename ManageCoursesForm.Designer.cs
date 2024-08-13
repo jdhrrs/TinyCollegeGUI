@@ -39,23 +39,23 @@
             // 
             // txtCourseID
             // 
-            txtCourseID.Location = new Point(100, 20);
+            txtCourseID.Location = new Point(117, 20);
             txtCourseID.Name = "txtCourseID";
-            txtCourseID.Size = new Size(200, 29);
+            txtCourseID.Size = new Size(183, 29);
             txtCourseID.TabIndex = 0;
             // 
             // txtCourseName
             // 
-            txtCourseName.Location = new Point(100, 50);
+            txtCourseName.Location = new Point(117, 50);
             txtCourseName.Name = "txtCourseName";
-            txtCourseName.Size = new Size(200, 29);
+            txtCourseName.Size = new Size(183, 29);
             txtCourseName.TabIndex = 1;
             // 
             // txtCredits
             // 
-            txtCredits.Location = new Point(100, 80);
+            txtCredits.Location = new Point(117, 80);
             txtCredits.Name = "txtCredits";
-            txtCredits.Size = new Size(200, 29);
+            txtCredits.Size = new Size(183, 29);
             txtCredits.TabIndex = 2;
             // 
             // lblCourseID
@@ -127,6 +127,7 @@
             // 
             // ManageCoursesForm
             // 
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(360, 370);
             Controls.Add(listBoxCourses);
             Controls.Add(btnRemoveCourse);

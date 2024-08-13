@@ -24,114 +24,114 @@ namespace TinyCollegeGUI
 
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelStudentID = new System.Windows.Forms.Label();
-            this.labelStudentName = new System.Windows.Forms.Label();
-            this.labelInstructorName = new System.Windows.Forms.Label();
-            this.textBoxStudentID = new System.Windows.Forms.TextBox();
-            this.textBoxStudentName = new System.Windows.Forms.TextBox();
-            this.labelInstructorNameValue = new System.Windows.Forms.Label();
-            this.buttonFind = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            labelStudentID = new Label();
+            labelStudentName = new Label();
+            labelInstructorName = new Label();
+            textBoxStudentID = new TextBox();
+            textBoxStudentName = new TextBox();
+            labelInstructorNameValue = new Label();
+            buttonFind = new Button();
+            buttonClose = new Button();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.labelStudentID);
-            this.groupBox1.Controls.Add(this.labelStudentName);
-            this.groupBox1.Controls.Add(this.labelInstructorName);
-            this.groupBox1.Controls.Add(this.textBoxStudentID);
-            this.groupBox1.Controls.Add(this.textBoxStudentName);
-            this.groupBox1.Controls.Add(this.labelInstructorNameValue);
-            this.groupBox1.Controls.Add(this.buttonFind);
-            this.groupBox1.Controls.Add(this.buttonClose);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 200);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search for a student";
+            groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.Controls.Add(labelStudentID);
+            groupBox1.Controls.Add(labelStudentName);
+            groupBox1.Controls.Add(labelInstructorName);
+            groupBox1.Controls.Add(textBoxStudentID);
+            groupBox1.Controls.Add(textBoxStudentName);
+            groupBox1.Controls.Add(labelInstructorNameValue);
+            groupBox1.Controls.Add(buttonFind);
+            groupBox1.Controls.Add(buttonClose);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(360, 200);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Search for a student";
             // 
             // labelStudentID
             // 
-            this.labelStudentID.AutoSize = true;
-            this.labelStudentID.Location = new System.Drawing.Point(6, 22);
-            this.labelStudentID.Name = "labelStudentID";
-            this.labelStudentID.Size = new System.Drawing.Size(61, 13);
-            this.labelStudentID.TabIndex = 0;
-            this.labelStudentID.Text = "Student ID:";
+            labelStudentID.AutoSize = true;
+            labelStudentID.Location = new Point(6, 22);
+            labelStudentID.Name = "labelStudentID";
+            labelStudentID.Size = new Size(85, 21);
+            labelStudentID.TabIndex = 0;
+            labelStudentID.Text = "Student ID:";
             // 
             // labelStudentName
             // 
-            this.labelStudentName.AutoSize = true;
-            this.labelStudentName.Location = new System.Drawing.Point(6, 48);
-            this.labelStudentName.Name = "labelStudentName";
-            this.labelStudentName.Size = new System.Drawing.Size(78, 13);
-            this.labelStudentName.TabIndex = 1;
-            this.labelStudentName.Text = "Student Name:";
+            labelStudentName.AutoSize = true;
+            labelStudentName.Location = new Point(6, 48);
+            labelStudentName.Name = "labelStudentName";
+            labelStudentName.Size = new Size(112, 21);
+            labelStudentName.TabIndex = 1;
+            labelStudentName.Text = "Student Name:";
             // 
             // labelInstructorName
             // 
-            this.labelInstructorName.AutoSize = true;
-            this.labelInstructorName.Location = new System.Drawing.Point(6, 74);
-            this.labelInstructorName.Name = "labelInstructorName";
-            this.labelInstructorName.Size = new System.Drawing.Size(84, 13);
-            this.labelInstructorName.TabIndex = 2;
-            this.labelInstructorName.Text = "Instructor Name:";
+            labelInstructorName.AutoSize = true;
+            labelInstructorName.Location = new Point(6, 74);
+            labelInstructorName.Name = "labelInstructorName";
+            labelInstructorName.Size = new Size(126, 21);
+            labelInstructorName.TabIndex = 2;
+            labelInstructorName.Text = "Instructor Name:";
             // 
             // textBoxStudentID
             // 
-            this.textBoxStudentID.Location = new System.Drawing.Point(96, 19);
-            this.textBoxStudentID.Name = "textBoxStudentID";
-            this.textBoxStudentID.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStudentID.TabIndex = 3;
+            textBoxStudentID.Location = new Point(124, 19);
+            textBoxStudentID.Name = "textBoxStudentID";
+            textBoxStudentID.Size = new Size(149, 29);
+            textBoxStudentID.TabIndex = 3;
             // 
             // textBoxStudentName
             // 
-            this.textBoxStudentName.Location = new System.Drawing.Point(96, 45);
-            this.textBoxStudentName.Name = "textBoxStudentName";
-            this.textBoxStudentName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStudentName.TabIndex = 4;
+            textBoxStudentName.Location = new Point(124, 48);
+            textBoxStudentName.Name = "textBoxStudentName";
+            textBoxStudentName.Size = new Size(149, 29);
+            textBoxStudentName.TabIndex = 4;
             // 
             // labelInstructorNameValue
             // 
-            this.labelInstructorNameValue.AutoSize = true;
-            this.labelInstructorNameValue.Location = new System.Drawing.Point(96, 74);
-            this.labelInstructorNameValue.Name = "labelInstructorNameValue";
-            this.labelInstructorNameValue.Size = new System.Drawing.Size(0, 13);
-            this.labelInstructorNameValue.TabIndex = 5;
+            labelInstructorNameValue.AutoSize = true;
+            labelInstructorNameValue.Location = new Point(96, 74);
+            labelInstructorNameValue.Name = "labelInstructorNameValue";
+            labelInstructorNameValue.Size = new Size(0, 21);
+            labelInstructorNameValue.TabIndex = 5;
             // 
             // buttonFind
             // 
-            this.buttonFind.Location = new System.Drawing.Point(202, 17);
-            this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(75, 23);
-            this.buttonFind.TabIndex = 6;
-            this.buttonFind.Text = "Find";
-            this.buttonFind.UseVisualStyleBackColor = true;
-            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            buttonFind.Location = new Point(279, 14);
+            buttonFind.Name = "buttonFind";
+            buttonFind.Size = new Size(75, 29);
+            buttonFind.TabIndex = 6;
+            buttonFind.Text = "Find";
+            buttonFind.UseVisualStyleBackColor = true;
+            buttonFind.Click += buttonFind_Click;
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(202, 43);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 7;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            buttonClose.Location = new Point(279, 44);
+            buttonClose.Name = "buttonClose";
+            buttonClose.Size = new Size(75, 30);
+            buttonClose.TabIndex = 7;
+            buttonClose.Text = "Close";
+            buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += buttonClose_Click;
             // 
             // SearchStudent
             // 
-            this.ClientSize = new System.Drawing.Size(384, 221);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "SearchStudent";
-            this.Text = "SearchStudent";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            ClientSize = new Size(384, 221);
+            Controls.Add(groupBox1);
+            Name = "SearchStudent";
+            Text = "SearchStudent";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
     }
 }
