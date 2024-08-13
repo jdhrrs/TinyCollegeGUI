@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace TinyCollegeGUI
 {
-    partial class DisplayStudentsForm
+    partial class DisplayAllStudentsForm
     {
         private DataGridView dataGridViewStudents;
         private Button button1;
@@ -44,18 +44,21 @@ namespace TinyCollegeGUI
             button1.TabIndex = 1;
             button1.Text = "Remove Selected Student";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += new System.EventHandler(button1_Click);
             // 
-            // DisplayStudentsForm
+            // DisplayAllStudentsForm
             // 
-            ClientSize = new Size(800, 540);
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 540);
             Controls.Add(button1);
             Controls.Add(dataGridViewStudents);
-            Name = "DisplayStudentsForm";
+            Name = "DisplayAllStudentsForm";
             Text = "Display Students";
-            Load += DisplayStudentsForm_Load;
+            Load += new System.EventHandler(DisplayAllStudentsForm_Load);
             ((ISupportInitialize)dataGridViewStudents).EndInit();
             ResumeLayout(false);
         }
     }
 }
+

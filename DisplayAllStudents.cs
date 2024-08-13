@@ -88,9 +88,11 @@ namespace TinyCollegeGUI
             }
         }
 
-        private void DisplayStudentsForm_Load(object sender, EventArgs e)
+        private void DisplayAllStudentsForm_Load(object sender, EventArgs e)
         {
 
         }
     }
 }
+
+
