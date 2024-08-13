@@ -44,7 +44,7 @@ namespace TinyCollegeGUI
             button1.Name = "button1";
             button1.Size = new Size(249, 105);
             button1.TabIndex = 1;
-            button1.Text = "Remove Selected Student";
+            button1.Text = "Delete Selected Student From Database";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
