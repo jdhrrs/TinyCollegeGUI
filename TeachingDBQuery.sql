@@ -1,4 +1,4 @@
-﻿-- Create Students table if it doesn't exist
+﻿-- Create Students table 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Students]') AND type in (N'U'))
 BEGIN
     CREATE TABLE [dbo].[Students](
@@ -10,7 +10,7 @@ BEGIN
 END;
 GO
 
--- Create Courses table if it doesn't exist
+-- Create Courses table 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Courses]') AND type in (N'U'))
 BEGIN
     CREATE TABLE [dbo].[Courses](
@@ -21,7 +21,7 @@ BEGIN
 END;
 GO
 
--- Create Enrollments table if it doesn't exist
+-- Create Enrollments table 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Enrollments]') AND type in (N'U'))
 BEGIN
     CREATE TABLE [dbo].[Enrollments](
