@@ -26,8 +26,8 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[En
 BEGIN
     CREATE TABLE [dbo].[Enrollments](
         [EnrollmentID] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-        [StudentID] [int] NOT NULL FOREIGN KEY REFERENCES Students(StudentID),
-        [CourseID] NVARCHAR(50) NOT NULL FOREIGN KEY REFERENCES Courses(CourseID)
+        [StudentID] [int] NOT NULL FOREIGN KEY REFERENCES Students(StudentID) ON DELETE CASCADE,
+        [CourseID] NVARCHAR(50) NOT NULL FOREIGN KEY REFERENCES Courses(CourseID) ON DELETE CASCADE
     );
 END;
 GO
