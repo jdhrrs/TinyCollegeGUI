@@ -20,10 +20,12 @@ namespace TinyCollegeGUI
 
         private void LoadStudents()
         {
+        // Generates list of students in database
             students = new List<Student>();
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                // Tells system to SELECT info (student name, ID, and GPA) FROM the Students table from the database
                 string query = "SELECT StudentID, FirstName, LastName, GPA FROM Students";
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -45,7 +47,7 @@ namespace TinyCollegeGUI
 
             dataGridViewStudents.DataSource = students;
         }
-
+        // Event handler for Edit Selected Student button
         private void btnEditSelectedStudent_Click(object sender, EventArgs e)
         {
             if (dataGridViewStudents.SelectedRows.Count > 0)
@@ -57,6 +59,7 @@ namespace TinyCollegeGUI
             }
             else
             {
+            // Displays message box to user to prompt them to select a student from the database whose information they wish to edit/update in the system
                 MessageBox.Show("Please select a student to edit.");
             }
         }
