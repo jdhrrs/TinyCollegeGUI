@@ -31,6 +31,7 @@ namespace TinyCollegeGUI
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                // Tells system to SELECT course info FROM courses table in database
                 string query = "SELECT CourseID, CourseName, Credits FROM Courses";
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -146,6 +147,7 @@ namespace TinyCollegeGUI
             }
             else
             {
+            // Tells system to display a message prompting user to select the course they would like to delete from the system
                 MessageBox.Show("Please select a course to delete.");
             }
         }
@@ -174,14 +176,17 @@ namespace TinyCollegeGUI
                             command.Parameters.AddWithValue("@CourseID", courseID);
                             command.ExecuteNonQuery();
                         }
-
+                        
                         transaction.Commit();
+                        // Displays message to user to let them know when the selected course has been successfully deleted from the database
                         MessageBox.Show("Course deleted successfully.");
                         LoadCourses(); // Refresh the course list
                     }
+                    // catch statement allows you to define a block of code to be executed, if an error occurs 
                     catch (Exception ex)
                     {
                         transaction.Rollback();
+                        // Displays message to user to let them know there was an error when attempting to delete the selected course from the database
                         MessageBox.Show($"Error deleting course: {ex.Message}");
                     }
                 }

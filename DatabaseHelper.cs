@@ -9,13 +9,14 @@ namespace TinyCollege
     public static class DatabaseHelper
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString;
-
+        // creates a list so the user can view all courses that are in the database and the courses' corresponding information
         public static List<Course> GetAllCourses()
         {
             List<Course> courses = new List<Course>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                // SELECT FROM command is used to select specific data from the table (the Course Table) in the database; SELECT tells the system exactly what info to extract and FROM tells the system where to pull that info from 
                 string query = "SELECT CourseID, CourseName, Credits FROM Courses";
                 SqlCommand command = new SqlCommand(query, connection);
 

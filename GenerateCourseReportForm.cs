@@ -44,6 +44,7 @@ namespace TinyCollegeGUI
             var dataTable = new DataTable();
             using (var connection = new SqlConnection(connectionString))
             {
+            // Tells system to SELECT info FROM Courses table to insert into report 
                 string query = "SELECT * FROM Courses WHERE CourseName LIKE @Criteria";
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -69,7 +70,7 @@ namespace TinyCollegeGUI
             {
                 var filePath = saveFileDialog.FileName;
                 var fileExtension = Path.GetExtension(filePath);
-
+                // switch statement evaluates a given expression and based on the evaluated value (matching a certain condition) executes the statements associated with it
                 switch (fileExtension)
                 {
                     case ".xlsx":
@@ -82,7 +83,7 @@ namespace TinyCollegeGUI
                 }
             }
         }
-
+        // Gives system command to export course report onto Excel
         private void ExportToExcel(DataTable dataTable, string filePath)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -92,6 +93,7 @@ namespace TinyCollegeGUI
                 worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
                 package.SaveAs(new FileInfo(filePath));
             }
+            // Displays message box to inform user when course report from is successfully exported onto Excel spreadsheet for user to view
             MessageBox.Show("Report exported to Excel successfully.");
         }
 

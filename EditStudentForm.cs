@@ -21,6 +21,7 @@ namespace TinyCollegeGUI
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString))
             {
                 connection.Open();
+                // Tells system to SELECT info FROM the Students table 
                 string query = "SELECT * FROM Students WHERE StudentID = @StudentID";
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -37,7 +38,7 @@ namespace TinyCollegeGUI
                 }
             }
         }
-
+        // Saves valid student info onto database; makes "Save" button functional for user
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateStudentInformation())
@@ -50,12 +51,14 @@ namespace TinyCollegeGUI
         {
             if (string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtLastName.Text))
             {
+            // Displays message box to prompt user to fill in name text boxes in order to execute command 
                 MessageBox.Show("Name fields cannot be empty.");
                 return false;
             }
 
             if (!double.TryParse(txtGPA.Text, out _))
             {
+            // Displays message box to promp user to ensure they provided the GPA number in the correct format to the system
                 MessageBox.Show("GPA must be a valid number.");
                 return false;
             }
@@ -68,6 +71,7 @@ namespace TinyCollegeGUI
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString))
             {
                 connection.Open();
+                // UPDATES student information in the database 
                 string query = "UPDATE Students SET FirstName = @FirstName, LastName = @LastName, GPA = @GPA WHERE StudentID = @StudentID";
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -79,7 +83,7 @@ namespace TinyCollegeGUI
                     command.ExecuteNonQuery();
                 }
             }
-
+            // Displays message box to inform user when the student information that was changed by the user has been successfully updated in the database
             MessageBox.Show("Student information updated successfully.");
             this.Close();
         }

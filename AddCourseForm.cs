@@ -24,6 +24,7 @@ namespace TinyCollegeGUI
             using (var connection = GetConnection())
             {
                 connection.Open();
+                // The INSERT INTO command is used to tell the system to insert new rows into the "Courses" table; new course info that is saved by the user is then inserted into the courses table and stored into the database
                 string query = "INSERT INTO Courses (CourseID, CourseName, Credits) VALUES (@CourseID, @CourseName, @Credits)";
                 using (var command = new SqlCommand(query, connection))
                 {

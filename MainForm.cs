@@ -1,3 +1,10 @@
+// Team 1 (Madison Mato, Phil Richey, Luis Aragon, Justin Harris)
+// CISS 311
+// Course Project
+// 07/15/2024
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
