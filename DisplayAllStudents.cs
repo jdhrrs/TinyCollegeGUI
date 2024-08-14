@@ -85,9 +85,11 @@ namespace TinyCollegeGUI
                         }
 
                         transaction.Commit();
+                        // Displays message box to user to inform user when the selected student has been successfully deleted from the database
                         MessageBox.Show("Student removed successfully.");
                         LoadStudents(); // Refresh the list after removal
                     }
+                    // catch statement allows you to define a block of code to be executed, if an error occurs
                     catch (Exception ex)
                     {
                         transaction.Rollback();
@@ -106,6 +108,7 @@ namespace TinyCollegeGUI
             }
             else
             {
+            // Prompts students to select the specific student they would like to remove from the database
                 MessageBox.Show("Please select a student to remove.");
             }
         }
