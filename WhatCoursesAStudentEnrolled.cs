@@ -17,7 +17,7 @@ namespace TinyCollegeGUI
         {
             InitializeComponent();
         }
-
+        // Event handler for "Close" button on form; makes "Close" button functional to user
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
