@@ -45,6 +45,7 @@ namespace TinyCollegeGUI
             label1 = new Label();
             statusStrip.SuspendLayout();
             SuspendLayout();
+            // these previous lines lay out the names of the different buttons users will utilize on the main design page 
             // 
             // button1
             // 
@@ -57,6 +58,7 @@ namespace TinyCollegeGUI
             button1.Text = "Add a Student";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button2
             // 
@@ -69,6 +71,7 @@ namespace TinyCollegeGUI
             button2.Text = "Display All Students";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button3
             // 
@@ -81,6 +84,7 @@ namespace TinyCollegeGUI
             button3.Text = "Enroll a Student in a Course";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button4
             // 
@@ -88,6 +92,7 @@ namespace TinyCollegeGUI
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 0;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button5
             // 
@@ -100,6 +105,7 @@ namespace TinyCollegeGUI
             button5.Text = "Add a Course";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button6
             // 
@@ -112,6 +118,7 @@ namespace TinyCollegeGUI
             button6.Text = "Display All Courses";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button7
             // 
@@ -124,6 +131,7 @@ namespace TinyCollegeGUI
             button7.Text = "Who is in a Course";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // button8
             // 
@@ -136,6 +144,7 @@ namespace TinyCollegeGUI
             button8.Text = "Exit";
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // btnEditStudent
             // 
@@ -148,6 +157,7 @@ namespace TinyCollegeGUI
             btnEditStudent.Text = "Edit Student";
             btnEditStudent.UseVisualStyleBackColor = false;
             btnEditStudent.Click += btnEditStudent_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // btnGenerateStudentReport
             // 
@@ -160,6 +170,7 @@ namespace TinyCollegeGUI
             btnGenerateStudentReport.Text = "Generate Student Report";
             btnGenerateStudentReport.UseVisualStyleBackColor = false;
             btnGenerateStudentReport.Click += btnGenerateStudentReport_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // btnGenerateCourseReport
             // 
@@ -172,6 +183,7 @@ namespace TinyCollegeGUI
             btnGenerateCourseReport.Text = "Generate Course Report";
             btnGenerateCourseReport.UseVisualStyleBackColor = false;
             btnGenerateCourseReport.Click += btnGenerateCourseReport_Click;
+            // these lines give info on the layout, or appearance, of the given button (front name, font size, button name, etc.)
             // 
             // statusStrip
             // 
@@ -181,6 +193,7 @@ namespace TinyCollegeGUI
             statusStrip.Size = new Size(738, 22);
             statusStrip.TabIndex = 12;
             statusStrip.Text = "statusStrip";
+            // these lines give info on the status strip, which is  displays information about an object being viewed on the main Form, the object's components, or contextual information that relates to that object's operation within our application
             // 
             // toolStripStatusLabel
             // 
