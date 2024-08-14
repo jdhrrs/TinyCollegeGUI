@@ -18,6 +18,7 @@ namespace TinyCollegeGUI
         {
             using SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TinyCollegeDB"].ConnectionString);
             using SqlDataAdapter adapter = new SqlDataAdapter(
+            // Tells system to SELECT info FROM the joined (or combined) Students and Instructors tables
                 "SELECT Students.FirstName, Students.LastName, Instructors.InstructorName FROM Students JOIN Instructors ON Students.InstructorId = Instructors.InstructorId WHERE StudentID = @studentId", conn);
             adapter.SelectCommand.Parameters.AddWithValue("@studentId", textBoxStudentID.Text);
             DataTable studentTable = new DataTable();
