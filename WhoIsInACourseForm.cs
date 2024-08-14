@@ -92,6 +92,7 @@ namespace TinyCollegeGUI
             var students = new List<Student>();
             using (var connection = GetConnection())
             {
+            // SELECTS student info (ID and name) FROM joined Students table and Enrollments table 
                 connection.Open();
                 string query = @"
                     SELECT s.StudentId, s.FirstName, s.LastName 
